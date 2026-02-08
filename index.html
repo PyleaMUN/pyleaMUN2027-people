@@ -15,7 +15,21 @@
     } 
 
     .navbar-custom{ background:var(--nav-bg); box-shadow:0 2px 4px rgba(0,0,0,.1); }
-    header{text-align:center; margin:2rem 0;} header img{max-width:200px; margin-bottom:1rem;}
+    .nav-link-home {
+        color: var(--teal) !important;
+        font-weight: 700;
+        border: 1px solid var(--teal);
+        border-radius: 5px;
+        padding: 5px 15px !important;
+        transition: 0.3s;
+    }
+    .nav-link-home:hover {
+        background-color: var(--teal);
+        color: #fff !important;
+    }
+
+    header{text-align:center; margin:2rem 0;} 
+    header img{max-width:200px; margin-bottom:1rem;}
     
     h1{ font-family:'Playfair Display',serif; color:var(--teal); font-size:2.5rem; margin-bottom:2rem; }
     .section{ margin-bottom:3rem; }
@@ -67,10 +81,13 @@
 
   <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="#">
+      <a class="navbar-brand d-flex align-items-center" href="https://pyleamun.github.io/pyleaMUN2027/">
         <img src="pyleaMUNfinallogo.png" alt="Logo" height="40" class="me-2">
         PyleaMUN
       </a>
+      <div class="ms-auto">
+        <a class="nav-link nav-link-home" href="https://pyleamun.github.io/pyleaMUN2027/">Home</a>
+      </div>
     </div>
   </nav>
 
@@ -172,10 +189,10 @@
         data-info="
             <h4 style='color: var(--teal);'>to be announced</h4>
             <p><strong>Contact:</strong> </p>
-            <div id='collapseEvangelos' class='collapse'>
+            <div id='collapseInternal' class='collapse'>
                 <p>     </p>
             </div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseEvangelos' aria-expanded='false' aria-controls='collapseEvangelos'>
+            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseInternal' aria-expanded='false' aria-controls='collapseInternal'>
                 [Show Bio]
             </button>
         ">
@@ -188,10 +205,10 @@
     data-img="potolios.jpg" 
     data-info="
         <h4 style='color: var(--teal);'>to be announced</h4>
-        <div id='collapseAlexandros' class='collapse'>
+        <div id='collapseExternal' class='collapse'>
             <p>                     </p>
         </div>
-        <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseAlexandros' aria-expanded='false' aria-controls='collapseAlexandros'>
+        <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExternal' aria-expanded='false' aria-controls='collapseExternal'>
             [Show Bio]
         </button>
     ">
@@ -208,12 +225,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         Security Council 1 (UNSC)
       </button>
 
@@ -222,12 +234,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         Security Council 2 (UNSC)
       </button>
 
@@ -236,12 +243,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         Digital Affairs & Sovereignty
       </button>
 
@@ -250,12 +252,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         Economic and Social Council (ECOSOC)
       </button>
 
@@ -264,12 +261,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         UNESCO
       </button>
 
@@ -278,12 +270,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         UN Environment Programme (UNEP)
       </button>
 
@@ -292,12 +279,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         World Health Organisation (WHO)
       </button>
 
@@ -306,12 +288,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         Human Rights Council (HRC)
       </button>
 
@@ -320,12 +297,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         UN Women
       </button>
 
@@ -334,12 +306,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         Social, Humanitarian & Cultural Committee (SOCHUM)
       </button>
 
@@ -348,12 +315,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         UN Office on Drugs and Crime (UNODC)
       </button>
 
@@ -362,12 +324,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         Historical Crisis Committee (HCC)
       </button>
 
@@ -376,12 +333,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         Special Tribunal (STIPS)
       </button>
 
@@ -390,12 +342,7 @@
               data-img1="default-profile.png"
               data-img2="default-profile.png"
               data-img3="default-profile.png"
-              data-info="
-                <hr>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-              ">
+              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
         NATO
       </button>
     </div>
@@ -408,103 +355,29 @@
 
     <div class="section">
         <h2>The Press</h2>
-        
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      
-      
           <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Antigoni Klironomou"
-                    data-role="Press Member"
-                    data-img="press_klironomou.jpg"
-                    data-info="<p><strong>Press Member:</strong> I am <strong>Antigoni Klironomou</strong>, I am 17 years old and I have been participating in MUNS for the past two years. It has truly been the best experience of my life. MUN has helped me broaden my horizons and think out of the box. Joining PyleaMUN's Press team will let me follow my passion for writing and photography. I am responsible, creative, deeply passionate, cooperative, and ready to give my best self.</p>">
+            <button class="role-btn small-role-btn" data-name="Antigoni Klironomou" data-role="Press Member" data-img="press_klironomou.jpg" data-info="<p><strong>Press Member:</strong> Antigoni Klironomou details...</p>">
               Antigoni Klironomou
             </button>
           </div>
-      
           <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Georgia Malea"
-                    data-role="Press Member"
-                    data-img="malea.jpg"
-                    data-info="<p><strong>Press Member:</strong> I am <strong>Georgia Malea</strong>, I am 17 years old and although I haven’t participated in an MUN conference yet, I’m looking forward to this new experience. Joining the press team is a good opportunity to let me practice my skills both in writing and photography.</p>">
+            <button class="role-btn small-role-btn" data-name="Georgia Malea" data-role="Press Member" data-img="malea.jpg" data-info="<p><strong>Press Member:</strong> Georgia Malea details...</p>">
               Georgia Malea
             </button>
           </div>
-      
           <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Anastasia Poimenidou"
-                    data-role="Press Member"
-                    data-img="poimenidou.jpg"
-                    data-info="<p><strong>Press Member:</strong> I'm <strong>Anastasia Poimenidou</strong>, a 17-year-old student who has already participated in two MUN conferences as a delegate. I believe that being part of an MUN not only helps you develop your communication and critical thinking skills, but also allows you to make new friends and experience unique things. Through these conferences, I’ve learned how to express my opinions confidently, collaborate with people from different backgrounds. Now, I feel that it’s time for me to give something back to my school by helping organize our own MUN, and to share this amazing experience with other students who might discover the same passion I did.</p>">
+            <button class="role-btn small-role-btn" data-name="Anastasia Poimenidou" data-role="Press Member" data-img="poimenidou.jpg" data-info="<p><strong>Press Member:</strong> Anastasia Poimenidou details...</p>">
               Anastasia Poimenidou
             </button>
           </div>
-      
           <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Sotiria Xourafa"
-                    data-role="Press Member"
-                    data-img="xourafa.jpeg"
-                    data-info="<p><strong>Press Member:</strong> My name is <strong>Sotiria Xourafa</strong>, and I am 17 years old. This will be my first time participating in MUN, and I am very excited to be part of this experience. I believe it will help me expand my perspective and broaden my horizons. Joining PyleaMUN’s Press team gives me the hope of gaining new experiences that I will cherish for a lifetime. I see myself as a responsible, creative, and passionate person who is always eager to learn new things. I am fully committed to giving my utmost effort in everything I do.</p>">
+            <button class="role-btn small-role-btn" data-name="Sotiria Xourafa" data-role="Press Member" data-img="xourafa.jpeg" data-info="<p><strong>Press Member:</strong> Sotiria Xourafa details...</p>">
               Sotiria Xourafa
             </button>
           </div>
-      
-          <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Nikos Anagnostou"
-                    data-role="Press Member"
-                    data-img="images/press_anagnostou_placeholder.png"
-                    data-info="<p><strong>Press Member:</strong> <strong>Nikos Anagnostou</strong> manages the daily bulletin and contributes to editorial planning for MUN coverage.</p>">
-              (to be announced)
-            </button>
-          </div>
-      
-          <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Irene Papakonstantinou"
-                    data-role="Press Member"
-                    data-img="images/press_irene_placeholder.png"
-                    data-info="<p><strong>Press Member:</strong> <strong>Irene Papakonstantinou</strong> is responsible for social media updates and creative engagement with the audience during sessions.</p>">
-              (to be announced)
-            </button>
-          </div>
-      
-          <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Sotiris Venizelos"
-                    data-role="Press Member"
-                    data-img="images/press_venizelos_placeholder.png"
-                    data-info="<p><strong>Press Member:</strong> <strong>Sotiris Venizelos</strong> reports on committee developments and writes feature articles for the conference blog.</p>">
-              (to be announced)
-            </button>
-          </div>
-      
-          <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Zoe Nikopoulou"
-                    data-role="Press Member"
-                    data-img="images/press_zoe_placeholder.png"
-                    data-info="<p><strong>Press Member:</strong> <strong>Zoe Nikopoulou</strong> designs the layout and visual identity of the final conference magazine.</p>">
-              (to be announced)
-            </button>
-          </div>
-      
-          <div class="col">
-            <button class="role-btn small-role-btn"
-                    data-name="Thanos Markopoulos"
-                    data-role="Press Member"
-                    data-img="images/press_thanos_placeholder.png"
-                    data-info="<p><strong>Press Member:</strong> <strong>Thanos Markopoulos</strong> is a talented videographer responsible for daily highlight reels and post-conference documentation.</p>">
-              (to be announced)
-            </button>
-          </div>
-      
         </div>
       </div>
-
   </div>
 
   <div class="modal-overlay" id="modalOverlay">
@@ -543,19 +416,9 @@
             gallery.style.display = 'flex';
             for (let i = 1; i <= 3; i++) {
               const img = new Image();
-              
-              // Logic from your provided index-old.html:
-              // Using btn.dataset[`img${i}`] allows specific images if defined, 
-              // but relies on the fallback or the hardcoded string if needed.
-              // Since we set data-imgX="default-profile.png", it will use that.
               let imgSrc = btn.dataset[`img${i}`];
-              
               img.src = imgSrc ? imgSrc : 'default-profile.png';
-              
-              img.onerror = () => {
-                 img.src = 'default-profile.png';
-              };
-
+              img.onerror = () => { img.src = 'default-profile.png'; };
               img.style.width = '120px'; img.style.height = '120px'; img.style.borderRadius = '50%'; 
               img.style.objectFit = 'cover'; img.style.border = '3px solid var(--gold)'; img.style.margin = '0 0.5rem';
               gallery.appendChild(img);
