@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PyleaMUN 2027 Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root { --nav-bg:#f8f8f0; --teal:#006d7a; --gold:#c59d12; --cream:#f8f5ec; --text-dark:#333; }
+    body { margin:0; padding-top:56px; font-family:'Lato',sans-serif; background:var(--cream); color:var(--text-dark); }
+    
+    body.modal-open { 
+        overflow: hidden !important; 
+    } 
+
+    .navbar-custom{ background:var(--nav-bg); box-shadow:0 2px 4px rgba(0,0,0,.1); }
+    header{text-align:center; margin:2rem 0;} header img{max-width:200px; margin-bottom:1rem;}
+    
+    h1{ font-family:'Playfair Display',serif; color:var(--teal); font-size:2.5rem; margin-bottom:2rem; }
+    .section{ margin-bottom:3rem; }
+    h2{ font-family:'Playfair Display',serif; color:var(--gold); font-size:1.8rem; border-bottom:2px solid var(--teal); display:inline-block; padding-bottom:.2rem; margin-bottom:1rem; }
+    
+    .role-btn{ display:block; width:100%; text-align:left; background:none; border:2px solid var(--teal); padding:.5rem; border-radius:4px; font-weight:bold; color:var(--teal); transition:.3s; margin-bottom:.5rem; }
+    .role-btn:hover{ background:var(--teal); color:#fff; }
+    .modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.6); display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:.3s; z-index:1050; }
+    .modal-overlay.active{ opacity:1; visibility:visible; }
+    .modal-box{ 
+        background:#fff; 
+        border-radius:8px; 
+        max-width:500px; 
+        width:90%; 
+        padding:2rem; 
+        position:relative; 
+        transform:translateY(-20px); 
+        transition:.3s; 
+        max-height: 95vh; 
+        overflow-y: auto; 
+    }
+    .modal-overlay.active .modal-box{ transform:translateY(0); }
+    .modal-gallery img, .modal-single img{ object-fit:cover; width:120px; height:120px; border-radius:50%; border:3px solid var(--gold); margin:0 .5rem; }
+    .modal-gallery{ display:flex; justify-content:center; margin-bottom:1rem; }
+    .modal-single{ display:flex; justify-content:center; margin-bottom:1rem; }
+    .close-btn{ position:absolute; top:.5rem; right:.5rem; background:none; border:none; font-size:1.5rem; color:var(--teal); cursor:pointer; }
+    #modalName{ text-align:center; margin-bottom:.5rem; font-weight:bold; }
+    #modalRole{ text-align:center; margin-bottom:.5rem; color:var(--gold); }
+    #modalInfo{ text-align:left; }
+    .collapse-toggle { color: var(--teal); cursor: pointer; text-decoration: underline; background: none; border: none; padding: 0; font-weight: bold; }
+    .collapse-toggle:hover { color: var(--gold); }
+    .modal-box h4 {
+        font-size: 1.1rem; 
+        font-weight: 700;
+        color: var(--teal);
+    }
+
+    @media (max-width: 576px) {
+      .modal-box { max-width: 95%; width: 95%; padding: 1rem; }
+      .modal-gallery img, .modal-single img { width: 80px; height: 80px; }
+      .modal-box h4 { font-size: 1rem; }
+      #modalName { font-size: 1.2rem; }
+      #modalRole { font-size: 1rem; }
+      .small-role-btn { font-size: 0.9rem; padding: 0.4rem 0.6rem; border-radius: 6px; min-height: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="pyleaMUNfinallogo.png" alt="Logo" height="40" class="me-2">
+        PyleaMUN
+      </a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <img src="pyleaMUNfinallogo.png" alt="Logo">
+      <h1>Meet the Team</h1>
+    </header>
+
+    <div class="section">
+      <h2>PyleaMUN Leadership</h2>
+      <button class="role-btn" 
+              data-name="Panagiotis Domvros" 
+              data-role="President & Director" 
+              data-img="domvros.png" 
+              data-info="<p>Panagiotis Domvros, MA in Theatre Studies (University of Leeds) and BA in English Language & Literature (Aristotle University of Thessaloniki), brings over two decades of educational leadership to our Model United Nations. Since 2017 he has served as Principal in Secondary Education spearheading intercultural dialogue initiatives, conflict-resolution workshops and digital‐skills training for both students and teachers. As President and Director, he will leverage his extensive experience as an I.E.P. expert trainer and teacher-trainer to cultivate a dynamic, inclusive environment that empowers delegates to develop their diplomatic, analytical and collaborative skills. He will oversee all conference operations.</p>">
+          President & Director
+      </button>
+      <button class="role-btn"
+              data-name="Fani Vasilikou"
+              data-role="Director & Chief Advisor"
+              data-img="Vasilikou.jpg"
+              data-info="<p>Fani Vasilikou has dedicated her life to empowering young minds. As an English teacher in Secondary Education for over 30 years, she has inspired generations of students with her passion for language, learning, and global citizenship. Holding a BA in English Language and Literature from Aristotle University of Thessaloniki and an MA in Enabling Learning from Canterbury University, she combines academic excellence with inclusive, student-centered teaching. For 15 years, she has been mentoring students to develop their voices and diplomatic skills in MUN conferences regionally and abroad. As the Co-director of the PyleaMun, she will contribute to the organization of the conference through her vision, leadership, and unwavering commitment aiming to establish it as a respected and enriching educational event.She will provide guidance and ensure the conference meets educational goals.</p>">
+          Director & Chief Advisor
+      </button>
+      <button class="role-btn"
+              data-name="Lemonia Dimina"
+              data-role="Deputy Director & Advisor"
+              data-img="dimina.jpg"
+              data-info="<p>Lemonia Dimina serves as Deputy Director & Advisor, working closely with the President and the Director & Chief Advisor to support the overall planning, coordination, and academic vision of PyleaMUN. She contributes to strategic decisions and provides guidance across committees and conference operations, helping ensure that the conference remains inclusive, well-organised, and academically rigorous.</p>">
+        Deputy Director & Advisor
+      </button>
+      <button class="role-btn" 
+              data-name="Nickolas Loukas" 
+              data-role="Technical, Artistic Director & Press Co-ordinator" 
+              data-img="Loukas.png" 
+              data-info="<p>As the Technical and Artistic Director for the inaugural PyleaMUN conference, and serving as Press Co-ordinator and Special Advisor to the President, 17-year-old Nickolas Loukas is a dynamic force behind the scenes. With a keen eye for detail and a passion for creative expression, he is responsible for shaping the conference's visual identity and ensuring a seamless technical experience for all participants.</p>">
+          Technical, Artistic Director & Press-Co-ordinator
+      </button>
+    </div>
+
+    <div class="section">
+      <h2>Senior Student Advisors</h2>
+      <button class="role-btn"
+              data-name="Alexandra Moutropoulou"
+              data-role="Senior Student Advisor"
+              data-img="Alexandra.jpg"
+              data-info="<p>Hi everyone! My name is Alexandra Moutropoulou, and I recently graduated from the Faculty of Law at Aristotle University of Thessaloniki. I still remember participating in my very first MUN conference as a high school student — little did I know how much it would shape my academic and personal journey. Since then, I have taken part in over 20 MUN conferences, both in Greece and abroad, serving in various roles such as delegate, chair, and member of the Secretariat. I also had the honor of serving as President of the United Nations Society of AUTh during the 2024–2025 academic year, an experience that truly deepened my commitment to diplomacy, dialogue, and leadership. To all those who are just beginning their MUN journey, my advice is this: never be afraid to step out of your comfort zone and never set limits on what you can achieve!</p>">
+        Alexandra Moutropoulou
+      </button>
+      <button class="role-btn"
+              data-name="Filippos Kokkonos"
+              data-role="Senior Student Advisor"
+              data-img="Filippos.jpg"
+              data-info="<p>My name is Filippos Kokkonos, I am a final year law student in the Aristotle University of Thessaloniki. I started my MUN journey four years ago and I cannot imagine how my university life would be without it. I have participated in various MUNs in Greece and abroad, in multiple positions, and I have a soft spot for crisis committees.</p>">
+        Filippos Kokkonos
+      </button>
+    </div>
+
+    <div class="section">
+      <h2>Core Executives</h2>
+      <button class="role-btn" data-name="To be announced" data-role="Financial Oversight" data-info="<p>Information to be announced.</p>">Financial Oversight Team</button>
+      <button class="role-btn" data-name="To be announced" data-role="Technical Executive Advisor" data-info="<p>Information to be announced.</p>">Technical Executive Advisor</button>
+      <button class="role-btn" data-name="To be announced" data-role="Staff Executive Supervisor" data-info="<p>Information to be announced.</p>">Staff Executive Supervisor</button>
+    </div>
+
+    <div class="section">
+      <h2>General Assembly Secretariat</h2>
+      
+      <button class="role-btn"
+              data-name="Evangelos Papadopoulos"
+              data-role="President of the GA"
+              data-img="papdopoulos.png"
+              data-info="
+                  <h4 style='color: var(--teal);'>Evangelos Papadopoulos</h4>
+                  <p><strong>Contact:</strong> vnglspapadopoulos@gmail.com</p>
+                  <div id='collapseEvangelos' class='collapse'>
+                      <p>I am <strong>Evangelos Papadopoulos</strong>, a 17-year-old student at the 1st Senior High School of Pylea, serving as <strong>President of the General Assembly</strong> for the Pylea Model United Nations session. Having participated in numerous MUN conferences both in Greece and internationally—as delegate and chair—I bring a deep understanding of diplomacy, international relations, and public speaking. I’m committed to making PyleaMUN an engaging, high-quality experience and look forward to fostering meaningful dialogue and future leaders!</p>
+                  </div>
+                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseEvangelos' aria-expanded='false' aria-controls='collapseEvangelos'>
+                      [Show Bio]
+                  </button>
+              ">
+        President of the GA
+      </button>
+
+      <button class="role-btn" data-name="To be announced" data-role="Deputy President of the GA" data-info="<p>To be announced.</p>">Deputy President of the GA</button>
+      <button class="role-btn" data-name="To be announced" data-role="Secretary General" data-info="<p>To be announced.</p>">Secretary General</button>
+      <button class="role-btn" data-name="To be announced" data-role="Deputy Secretary General" data-info="<p>To be announced.</p>">Deputy Secretary General</button>
+    </div>
+
+    <div class="section">
+      <h2>2027 Committees</h2>
+      
+      <button class="role-btn"
+              data-committee="Security Council 1 (UNSC)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        Security Council 1 (UNSC)
+      </button>
+
+      <button class="role-btn"
+              data-committee="Security Council 2 (UNSC)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        Security Council 2 (UNSC)
+      </button>
+
+      <button class="role-btn"
+              data-committee="Committee on Digital Affairs & Sovereignty"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        Digital Affairs & Sovereignty
+      </button>
+
+      <button class="role-btn"
+              data-committee="Economic and Social Council (ECOSOC)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        Economic and Social Council (ECOSOC)
+      </button>
+
+      <button class="role-btn"
+              data-committee="UNESCO"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        UNESCO
+      </button>
+
+      <button class="role-btn"
+              data-committee="UN Environment Programme (UNEP)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        UN Environment Programme (UNEP)
+      </button>
+
+      <button class="role-btn"
+              data-committee="World Health Organisation (WHO)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        World Health Organisation (WHO)
+      </button>
+
+      <button class="role-btn"
+              data-committee="Human Rights Council (HRC)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        Human Rights Council (HRC)
+      </button>
+
+      <button class="role-btn"
+              data-committee="UN Women"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        UN Women
+      </button>
+
+      <button class="role-btn"
+              data-committee="SOCHUM"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        Social, Humanitarian & Cultural Committee (SOCHUM)
+      </button>
+
+      <button class="role-btn"
+              data-committee="UN Office on Drugs and Crime (UNODC)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        UN Office on Drugs and Crime (UNODC)
+      </button>
+
+      <button class="role-btn"
+              data-committee="Historical Crisis Committee (HCC)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        Historical Crisis Committee (HCC)
+      </button>
+
+      <button class="role-btn"
+              data-committee="Special Tribunal (STIPS)"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        Special Tribunal (STIPS)
+      </button>
+
+      <button class="role-btn"
+              data-committee="NATO"
+              data-img1="default-profile.png"
+              data-img2="default-profile.png"
+              data-img3="default-profile.png"
+              data-info="
+                <hr>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+                <h4 style='color: var(--teal);'>Chair: To be announced</h4>
+              ">
+        NATO
+      </button>
+    </div>
+
+    <div class="section">
+      <h2>The Staff</h2>
+      <button class="role-btn" data-role="Head of Staff" data-info="<p>To be announced.</p>">Head of Staff</button>
+      <button class="role-btn" data-role="Committee Staff Members" data-info="<p>To be announced.</p>">Committee Staff Members</button>
+    </div>
+
+    <div class="section">
+        <h2>The Press</h2>
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Antigoni Klironomou"
+                    data-role="Press Member"
+                    data-img="press_klironomou.jpg"
+                    data-info="<p><strong>Press Member:</strong> I am <strong>Antigoni Klironomou</strong>, I am 17 years old and I have been participating in MUNS for the past two years. It has truly been the best experience of my life. MUN has helped me broaden my horizons and think out of the box. Joining PyleaMUN's Press team will let me follow my passion for writing and photography. I am responsible, creative, deeply passionate, cooperative, and ready to give my best self.</p>">
+              Antigoni Klironomou
+            </button>
+          </div>
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Georgia Malea"
+                    data-role="Press Member"
+                    data-img="malea.jpg"
+                    data-info="<p><strong>Press Member:</strong> I am <strong>Georgia Malea</strong>, I am 17 years old and although I haven’t participated in an MUN conference yet, I’m looking forward to this new experience. Joining the press team is a good opportunity to let me practice my skills both in writing and photography.</p>">
+              Georgia Malea
+            </button>
+          </div>
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Anastasia Poimenidou"
+                    data-role="Press Member"
+                    data-img="poimenidou.jpg"
+                    data-info="<p><strong>Press Member:</strong> I'm <strong>Anastasia Poimenidou</strong>, a 17-year-old student who has already participated in two MUN conferences as a delegate. I believe that being part of an MUN not only helps you develop your communication and critical thinking skills, but also allows you to make new friends and experience unique things. Through these conferences, I’ve learned how to express my opinions confidently, collaborate with people from different backgrounds. Now, I feel that it’s time for me to give something back to my school by helping organize our own MUN, and to share this amazing experience with other students who might discover the same passion I did.</p>">
+              Anastasia Poimenidou
+            </button>
+          </div>
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Sotiria Xourafa"
+                    data-role="Press Member"
+                    data-img="xourafa.jpeg"
+                    data-info="<p><strong>Press Member:</strong> My name is <strong>Sotiria Xourafa</strong>, and I am 17 years old. This will be my first time participating in MUN, and I am very excited to be part of this experience. I believe it will help me expand my perspective and broaden my horizons. Joining PyleaMUN’s Press team gives me the hope of gaining new experiences that I will cherish for a lifetime. I see myself as a responsible, creative, and passionate person who is always eager to learn new things. I am fully committed to giving my utmost effort in everything I do.</p>">
+              Sotiria Xourafa
+            </button>
+          </div>
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Nikos Anagnostou"
+                    data-role="Press Member"
+                    data-img="images/press_anagnostou_placeholder.png"
+                    data-info="<p><strong>Press Member:</strong> <strong>Nikos Anagnostou</strong> manages the daily bulletin and contributes to editorial planning for MUN coverage.</p>">
+              (to be announced)
+            </button>
+          </div>
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Irene Papakonstantinou"
+                    data-role="Press Member"
+                    data-img="images/press_irene_placeholder.png"
+                    data-info="<p><strong>Press Member:</strong> <strong>Irene Papakonstantinou</strong> is responsible for social media updates and creative engagement with the audience during sessions.</p>">
+              (to be announced)
+            </button>
+          </div>
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Sotiris Venizelos"
+                    data-role="Press Member"
+                    data-img="images/press_venizelos_placeholder.png"
+                    data-info="<p><strong>Press Member:</strong> <strong>Sotiris Venizelos</strong> reports on committee developments and writes feature articles for the conference blog.</p>">
+              (to be announced)
+            </button>
+          </div>
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Zoe Nikopoulou"
+                    data-role="Press Member"
+                    data-img="images/press_zoe_placeholder.png"
+                    data-info="<p><strong>Press Member:</strong> <strong>Zoe Nikopoulou</strong> designs the layout and visual identity of the final conference magazine.</p>">
+              (to be announced)
+            </button>
+          </div>
+      
+          <div class="col">
+            <button class="role-btn small-role-btn"
+                    data-name="Thanos Markopoulos"
+                    data-role="Press Member"
+                    data-img="images/press_thanos_placeholder.png"
+                    data-info="<p><strong>Press Member:</strong> <strong>Thanos Markopoulos</strong> is a talented videographer responsible for daily highlight reels and post-conference documentation.</p>">
+              (to be announced)
+            </button>
+          </div>
+      
+        </div>
+      </div>
+
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="close-btn" id="closeModal">&times;</button>
+      <div class="modal-gallery" id="modalGallery" style="display:none;"></div>
+      <div class="modal-single" id="modalSingle" style="display:none;"></div>
+      <h3 id="modalName"></h3>
+      <p id="modalRole"></p>
+      <div id="modalInfo"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btns = document.querySelectorAll('.role-btn');
+      const overlay = document.getElementById('modalOverlay');
+      const gallery = document.getElementById('modalGallery');
+      const single = document.getElementById('modalSingle');
+      const nameEl = document.getElementById('modalName');
+      const roleEl = document.getElementById('modalRole');
+      const infoEl = document.getElementById('modalInfo');
+      const body = document.body;
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          gallery.innerHTML = ''; single.innerHTML = '';
+          gallery.style.display = 'none'; single.style.display = 'none';
+
+          nameEl.textContent = btn.dataset.name || btn.dataset.committee || btn.dataset.role || '';
+          roleEl.textContent = btn.dataset.role || btn.dataset.committee || '';
+          infoEl.innerHTML = btn.dataset.info || '';
+
+          if (btn.dataset.img1 !== undefined) {
+            gallery.style.display = 'flex';
+            for (let i = 1; i <= 3; i++) {
+              const img = new Image();
+              
+              // Logic from your provided index-old.html:
+              // Using btn.dataset[`img${i}`] allows specific images if defined, 
+              // but relies on the fallback or the hardcoded string if needed.
+              // Since we set data-imgX="default-profile.png", it will use that.
+              let imgSrc = btn.dataset[`img${i}`];
+              
+              img.src = imgSrc ? imgSrc : 'default-profile.png';
+              
+              img.onerror = () => {
+                 img.src = 'default-profile.png';
+              };
+
+              img.style.width = '120px'; img.style.height = '120px'; img.style.borderRadius = '50%'; 
+              img.style.objectFit = 'cover'; img.style.border = '3px solid var(--gold)'; img.style.margin = '0 0.5rem';
+              gallery.appendChild(img);
+            }
+          } else if (btn.dataset.img) {
+            single.style.display = 'flex';
+            const img = new Image();
+            img.src = btn.dataset.img;
+            img.onerror = () => img.src = 'default-profile.png';
+            img.style.width = '120px'; img.style.height = '120px'; img.style.borderRadius = '50%'; img.style.objectFit = 'cover'; img.style.border = '3px solid var(--gold)';
+            single.appendChild(img);
+          }
+
+          overlay.classList.add('active');
+          body.classList.add('modal-open');
+        });
+      });
+
+      const closeModal = () => { overlay.classList.remove('active'); body.classList.remove('modal-open'); };
+      document.getElementById('closeModal').addEventListener('click', closeModal);
+      overlay.addEventListener('click', e => e.target === overlay && closeModal());
+    });
+  </script>
+</body>
+</html>
