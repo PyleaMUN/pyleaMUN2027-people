@@ -1,473 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PyleaMUN 2027 Team</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* UPDATED SETTINGS: Background color changed to #fffce6 to match logo */
-    :root { 
-        --nav-bg:#fffce6; /* Updated to match body */
-        --teal:#006d7a; 
-        --gold:#c59d12; 
-        --cream:#fffce6; /* Updated from #f8f5ec to #fffce6 */
-        --text-dark:#333; 
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyleaMUN 2027</title>
+    <meta name="description" content="PyleaMUN 2027 - The Universal Right to Truth. Provisional Dates: 11-14/2/2027.">
     
-    body { 
-        margin:0; 
-        padding-top:56px; 
-        font-family:'Lato',sans-serif; 
-        background:var(--cream); 
-        color:var(--text-dark); 
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    body.modal-open { 
-        overflow: hidden !important; 
-    } 
-
-    .navbar-custom{ 
-        background:var(--nav-bg); 
-        box-shadow:0 2px 4px rgba(0,0,0,.1); 
-    }
-    
-    .nav-link-home {
-        color: var(--teal) !important;
-        font-weight: 700;
-        border: 1px solid var(--teal);
-        border-radius: 5px;
-        padding: 5px 15px !important;
-        transition: 0.3s;
-    }
-    .nav-link-home:hover {
-        background-color: var(--teal);
-        color: #fff !important;
-    }
-
-    header{text-align:center; margin:2rem 0;} 
-    
-    /* Removed mix-blend-mode as requested to ensure cleaner merge */
-    header img{max-width:200px; margin-bottom:1rem;}
-    
-    h1{ font-family:'Playfair Display',serif; color:var(--teal); font-size:2.5rem; margin-bottom:2rem; }
-    .section{ margin-bottom:3rem; }
-    h2{ font-family:'Playfair Display',serif; color:var(--gold); font-size:1.8rem; border-bottom:2px solid var(--teal); display:inline-block; padding-bottom:.2rem; margin-bottom:1rem; }
-    
-    .role-btn{ display:block; width:100%; text-align:left; background:none; border:2px solid var(--teal); padding:.5rem; border-radius:4px; font-weight:bold; color:var(--teal); transition:.3s; margin-bottom:.5rem; }
-    .role-btn:hover{ background:var(--teal); color:#fff; }
-    .modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.6); display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:.3s; z-index:1050; }
-    .modal-overlay.active{ opacity:1; visibility:visible; }
-    .modal-box{ 
-        background:#fff; 
-        border-radius:8px; 
-        max-width:500px; 
-        width:90%; 
-        padding:2rem; 
-        position:relative; 
-        transform:translateY(-20px); 
-        transition:.3s; 
-        max-height: 95vh; 
-        overflow-y: auto; 
-    }
-    .modal-overlay.active .modal-box{ transform:translateY(0); }
-    .modal-gallery img, .modal-single img{ object-fit:cover; width:120px; height:120px; border-radius:50%; border:3px solid var(--gold); margin:0 .5rem; }
-    .modal-gallery{ display:flex; justify-content:center; margin-bottom:1rem; }
-    .modal-single{ display:flex; justify-content:center; margin-bottom:1rem; }
-    .close-btn{ position:absolute; top:.5rem; right:.5rem; background:none; border:none; font-size:1.5rem; color:var(--teal); cursor:pointer; }
-    #modalName{ text-align:center; margin-bottom:.5rem; font-weight:bold; }
-    #modalRole{ text-align:center; margin-bottom:.5rem; color:var(--gold); }
-    #modalInfo{ text-align:left; }
-    .collapse-toggle { color: var(--teal); cursor: pointer; text-decoration: underline; background: none; border: none; padding: 0; font-weight: bold; }
-    .collapse-toggle:hover { color: var(--gold); }
-    .modal-box h4 {
-        font-size: 1.1rem; 
-        font-weight: 700;
-        color: var(--teal);
-    }
-
-    @media (max-width: 576px) {
-      .modal-box { max-width: 95%; width: 95%; padding: 1rem; }
-      .modal-gallery img, .modal-single img { width: 80px; height: 80px; }
-      .modal-box h4 { font-size: 1rem; }
-      #modalName { font-size: 1.2rem; }
-      #modalRole { font-size: 1rem; }
-      .small-role-btn { font-size: 0.9rem; padding: 0.4rem 0.6rem; border-radius: 6px; min-height: 60px; }
-    }
-  </style>
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #fcfbf9; color: #001f3f; }
+        .navbar-custom { background-color: #fcfbf9; }
+        .hero { background-image: url('logo.png'); background-repeat: no-repeat; background-size: contain; background-position: center center; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; min-height: 85vh; margin-top: 56px; }
+        .hero::before { content: ""; position: absolute; inset: 0; background-color: rgba(252, 251, 249, 0.85); }
+        .hero-content { position: relative; z-index: 1; max-width: 90%; padding: 2rem; }
+        .brand-title { color: #008080; font-weight: 900; letter-spacing: 2px; font-size: 3rem; margin-bottom: 1rem; }
+        .main-theme-title { font-weight: 900; color: #001f3f; font-size: 4rem; line-height: 1.1; text-transform: uppercase; text-shadow: 2px 2px 0px rgba(0,0,0,0.1); }
+        .theme-subtitle { font-size: 1.8rem; font-weight: 300; color: #333; margin-top: 1rem; margin-bottom: 2rem; border-bottom: 3px solid #b8860b; display: inline-block; padding-bottom: 10px; }
+        .date-highlight { display: inline-block; color: #b8860b; font-size: 1.5rem; font-weight: 700; padding: 0.5em 1em; border: 2px solid #b8860b; border-radius: 0.5em; margin-bottom: 1rem; background-color: rgba(255,255,255,0.9); }
+        .registration-notice { font-size: 1.2rem; font-weight: 700; color: #001f3f; margin-bottom: 2rem; }
+        .hero-btn { padding: 0.8rem 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0.5rem; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-decoration: none; }
+        .btn-teal { background-color: #008080; color: white; border: 2px solid #008080; }
+        .btn-teal:hover { background-color: #006666; color: white; transform: translateY(-2px); }
+        .btn-gold { background-color: #fff; color: #b8860b; border: 2px solid #b8860b; }
+        .btn-gold:hover { background-color: #b8860b; color: white; transform: translateY(-2px); }
+        .btn-study-guide { background-color: #001f3f; color: #fff; border: 1px solid #001f3f; padding: 0.5rem 1.2rem; border-radius: 5px; font-size: 0.9rem; font-weight: 700; transition: 0.3s; margin-top: 1rem; display: inline-block; text-decoration: none; }
+        .btn-study-guide:hover { background-color: #b8860b; border-color: #b8860b; color: white; }
+        @keyframes flash-effect { 0% { opacity: 1; color: #d63384; transform: scale(1); } 50% { opacity: 0.6; color: #dc3545; transform: scale(1.02); } 100% { opacity: 1; color: #d63384; transform: scale(1); } }
+        .flashing-notice { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; animation: flash-effect 1.2s infinite ease-in-out; margin-top: 2rem; }
+        #countdown-section { padding-top: 2rem; }
+        #countdown div { min-width: 90px; padding: 0.5em; text-align: center; }
+        #countdown span { display: block; font-size: 2.5rem; color: #008080; font-weight: bold; }
+        #countdown .small { font-size: 1rem; color: #555; text-transform: uppercase; }
+        .section-title { margin: 3rem 0 2rem; text-align: center; color: #001f3f; text-transform: uppercase; font-weight: 700; }
+        .accordion-item { border: none; margin-bottom: 0.75rem; background-color: transparent; }
+        .accordion-button { background-color: #fff; color: #001f3f; font-weight: 700; border-left: 5px solid #008080; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 8px !important; }
+        .accordion-button:not(.collapsed) { background-color: #eef7f7; color: #008080; box-shadow: none; }
+        .accordion-body { background-color: #fff; border: 1px solid rgba(0,0,0,0.05); border-top: none; border-radius: 0 0 8px 8px; padding: 2rem; text-align: justify; }
+        .topic-label { color: #008080; font-weight: 900; display: block; margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .topic-desc { margin-bottom: 1rem; }
+        .topic-bg { font-style: italic; color: #555; border-left: 3px solid #b8860b; padding-left: 1rem; margin-bottom: 1.5rem; }
+        .intro-icon { color: #b8860b; font-size: 1.2rem; margin-right: 10px; }
+        footer { background: #001f3f; color: #fcfbf9; padding: 2rem 0; margin-top: 4rem; }
+        @media (max-width: 768px) { .hero { min-height: 60vh; } .main-theme-title { font-size: 2.5rem; } .theme-subtitle { font-size: 1.2rem; } .brand-title { font-size: 2rem; } .hero-btn { width: 100%; display: block; margin: 0.5rem 0; } }
+    </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="https://pyleamun.github.io/pyleaMUN2027/">
-        <img src="pyleaMUNfinallogo.png" alt="Logo" height="40" class="me-2">
-        PyleaMUN
-      </a>
-      <div class="ms-auto">
-        <a class="nav-link nav-link-home" href="https://pyleamun.github.io/pyleaMUN2027/">Home</a>
-      </div>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <span class="navbar-brand d-flex align-items-center" style="color: #008080; font-weight: bold;">
+                <img src="logo.png" alt="PyleaMUN Logo" class="me-2" style="height:40px;">
+                PyleaMUN
+            </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fw-bold" href="https://pyleamun.github.io/pyleamun2026/" target="_blank">PyleaMUN 2026</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="https://pyleamun.github.io/pyleaMUN2027-people/" target="_blank">PyleaMUN 2027 People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://pyleamun.github.io/countries2027/" target="_blank">Country Availability</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://forms.gle/MDZL5CmGniXBvH1R9" target="_blank">School Registration 2027</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://forms.gle/nLaawdo5YffBxdAv7" target="_blank">Student Officer Application 2027</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <div class="container">
-    <header>
-      <img src="pyleaMUNfinallogo.png" alt="Logo">
-      <h1>Meet the Team</h1>
+    <header class="hero">
+        <div class="hero-content">
+            <div class="brand-title">PyleaMUN 2027</div>
+            <h1 class="main-theme-title">The Universal Right to Truth</h1>
+            <div class="theme-subtitle">Establishing International Norms Against State-Sponsored Disinformation</div>
+            <div class="d-block">
+                <div class="date-highlight">Provisional Dates: 11-14/2/2027</div>
+            </div>
+            
+            <div class="registration-notice">
+                Early registration of schools by 28-2-26. <br>
+                Registrations will open again 1-9-26.
+            </div>
+
+            <div class="d-flex justify-content-center flex-wrap gap-3 mb-4">
+                <a href="https://forms.gle/MDZL5CmGniXBvH1R9" target="_blank" class="btn hero-btn btn-teal"><i class="fas fa-school me-2"></i> School Registration 2027</a>
+                <a href="https://forms.gle/nLaawdo5YffBxdAv7" target="_blank" class="btn hero-btn btn-teal"><i class="fas fa-user-tie me-2"></i> Student Officer Application 2027</a>
+                <a href="https://pyleamun.github.io/countries2027/" target="_blank" class="btn hero-btn btn-gold"><i class="fas fa-globe me-2"></i> Country Availability</a>
+            </div>
+            
+            <div class="flashing-notice">More information coming soon</div>
+            <div style="font-size: 1.5rem; font-weight: 900; color: #28a745; margin-top: 0.5rem;">PyleaMUN remains true to its "No Fees" policy</div>
+            <div style="font-size: 1.1rem; font-weight: 400; color: #000; margin-top: 1rem; font-style: italic;"><strong>Page will be updated regularly and will be fully populated by the end of November 2026</strong></div>
+
+            <div class="text-center mt-4">
+                <button type="button" class="btn hero-btn btn-gold" data-bs-toggle="modal" data-bs-target="#termsModal"><i class="fas fa-file-contract me-2"></i> Terms and Conditions</button>
+            </div>
+        </div>
     </header>
 
-    <div class="section">
-      <h2>PyleaMUN Leadership</h2>
-      <button class="role-btn" 
-              data-name="Panagiotis Domvros" 
-              data-role="President & Director" 
-              data-img="domvros.png" 
-              data-info="<p>Panagiotis Domvros, MA in Theatre Studies (University of Leeds) and BA in English Language & Literature (Aristotle University of Thessaloniki), brings over two decades of educational leadership to our Model United Nations. Since 2017 he has served as Principal in Secondary Education spearheading intercultural dialogue initiatives, conflict-resolution workshops and digital‐skills training for both students and teachers. As President and Director, he will leverage his extensive experience as an I.E.P. expert trainer and teacher-trainer to cultivate a dynamic, inclusive environment that empowers delegates to develop their diplomatic, analytical and collaborative skills. He will oversee all conference operations.</p>">
-          President & Director
-      </button>
-      <button class="role-btn"
-              data-name="Fani Vasilikou"
-              data-role="Director & Chief Advisor"
-              data-img="Vasilikou.jpg"
-              data-info="<p>Fani Vasilikou has dedicated her life to empowering young minds. As an English teacher in Secondary Education for over 30 years, she has inspired generations of students with her passion for language, learning, and global citizenship. Holding a BA in English Language and Literature from Aristotle University of Thessaloniki and an MA in Enabling Learning from Canterbury University, she combines academic excellence with inclusive, student-centered teaching. For 15 years, she has been mentoring students to develop their voices and diplomatic skills in MUN conferences regionally and abroad. As the Co-director of the PyleaMun, she will contribute to the organization of the conference through her vision, leadership, and unwavering commitment aiming to establish it as a respected and enriching educational event.She will provide guidance and ensure the conference meets educational goals.</p>">
-          Director & Chief Advisor
-      </button>
-      <button class="role-btn"
-              data-name="Lemonia Dimina"
-              data-role="Deputy Director & Advisor"
-              data-img="dimina.jpg"
-              data-info="<p>Lemonia Dimina serves as Deputy Director & Advisor, working closely with the President and the Director & Chief Advisor to support the overall planning, coordination, and academic vision of PyleaMUN. She contributes to strategic decisions and provides guidance across committees and conference operations, helping ensure that the conference remains inclusive, well-organised, and academically rigorous.</p>">
-        Deputy Director & Advisor
-      </button>
-      <button class="role-btn" 
-              data-name="Nickolas Loukas" 
-              data-role="Technical, Artistic Director & Under Secretary General of Logistics" 
-              data-img="Loukas.png" 
-              data-info="<p>As the Technical and Artistic Director for the PyleaMUN conference, and serving as Under Secretary General of Logistics and Special Advisor to the President, 17-year-old Nickolas Loukas is a dynamic force behind the scenes. With a keen eye for detail and a passion for creative expression, he is responsible for shaping the conference's visual identity and ensuring a seamless technical experience for all participants.</p>">
-          Technical, Artistic Director & Under Secretary General of Logistics
-      </button>
-    </div>
-
-    <div class="section">
-      <h2>Senior Student Advisors</h2>
-      <button class="role-btn"
-              data-name="Alexandra Moutropoulou"
-              data-role="Senior Student Advisor"
-              data-img="Alexandra.jpg"
-              data-info="<p>Hi everyone! My name is Alexandra Moutropoulou, and I recently graduated from the Faculty of Law at Aristotle University of Thessaloniki. I still remember participating in my very first MUN conference as a high school student — little did I know how much it would shape my academic and personal journey. Since then, I have taken part in over 20 MUN conferences, both in Greece and abroad, serving in various roles such as delegate, chair, and member of the Secretariat. I also had the honor of serving as President of the United Nations Society of AUTh during the 2024–2025 academic year, an experience that truly deepened my commitment to diplomacy, dialogue, and leadership. To all those who are just beginning their MUN journey, my advice is this: never be afraid to step out of your comfort zone and never set limits on what you can achieve!</p>">
-        Alexandra Moutropoulou
-      </button>
-      <button class="role-btn"
-              data-name="Filippos Kokkonos"
-              data-role="Senior Student Advisor"
-              data-img="Filippos.jpg"
-              data-info="<p>My name is Filippos Kokkonos, I am a final year law student in the Aristotle University of Thessaloniki. I started my MUN journey four years ago and I cannot imagine how my university life would be without it. I have participated in various MUNs in Greece and abroad, in multiple positions, and I have a soft spot for crisis committees.</p>">
-        Filippos Kokkonos
-      </button>
-    </div>
-
-    <div class="section">
-      <h2>Core Executives</h2>
-      <button class="role-btn" data-name="To be announced" data-role="Financial Oversight" data-info="<p>Information to be announced.</p>">Financial Oversight Team</button>
-      <button class="role-btn" data-name="To be announced" data-role="Technical Executive Advisor" data-info="<p>Information to be announced.</p>">Technical Executive Advisor</button>
-      <button class="role-btn" data-name="To be announced" data-role="Staff Executive Supervisor" data-info="<p>Information to be announced.</p>">Staff Executive Supervisor</button>
-    </div>
-
-    <div class="section">
-      <h2>General Assembly Secretariat</h2>
-      
-      <button class="role-btn"
-              data-name="Evangelos Papadopoulos"
-              data-role="President of the GA"
-              data-img="papdopoulos.png"
-              data-info="
-                  <h4 style='color: var(--teal);'>Evangelos Papadopoulos</h4>
-                  <p><strong>Contact:</strong> vnglspapadopoulos@gmail.com</p>
-                  <div id='collapseEvangelos' class='collapse'>
-                      <p>I am <strong>Evangelos Papadopoulos</strong>, a 17-year-old student at the 1st Senior High School of Pylea, serving as <strong>President of the General Assembly</strong> for the Pylea Model United Nations session. Having participated in numerous MUN conferences both in Greece and internationally—as delegate and chair—I bring a deep understanding of diplomacy, international relations, and public speaking. I’m committed to making PyleaMUN an engaging, high-quality experience and look forward to fostering meaningful dialogue and future leaders!</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseEvangelos' aria-expanded='false' aria-controls='collapseEvangelos'>
-                      [Show Bio]
-                  </button>
-              ">
-        President of the GA
-      </button>
-
-      <button class="role-btn" data-name="To be announced" data-role="Deputy President of the GA" data-info="<p>To be announced.</p>">Deputy President of the GA</button>
-      <button class="role-btn" data-name="To be announced" data-role="Secretary General" data-info="<p>To be announced.</p>">Secretary General</button>
-      <button class="role-btn" data-name="To be announced" data-role="Deputy Secretary General" data-info="<p>To be announced.</p>">Deputy Secretary General</button>
-      <button class="role-btn" 
-              data-name="Nickolas Loukas" 
-              data-role="Under Secretary General of Logistics" 
-              data-img="Loukas.png" 
-              data-info="<p>As the Technical and Artistic Director for the PyleaMUN conference, and serving as Under Secretary General of Logistics and Special Advisor to the President, 17-year-old Nickolas Loukas is a dynamic force behind the scenes. With a keen eye for detail and a passion for creative expression, he is responsible for shaping the conference's visual identity and ensuring a seamless technical experience for all participants.</p>">
-          Under Secretary General of Logistics
-      </button>
-    </div>
-
-<div class="section">
-  <h2>Executive Team</h2>
-
-  <button class="role-btn"
-        data-name="to be announced"
-        data-role="Head of Internal Affairs"
-        data-img="head_exec.png"
-        data-info="
-            <h4 style='color: var(--teal);'>to be announced</h4>
-            <p><strong>Contact:</strong> </p>
-            <div id='collapseInternal' class='collapse'>
-                <p>     </p>
+    <section id="countdown-section">
+        <div class="container text-center">
+            <h2 class="mb-4 text-secondary" style="font-weight: 300;">Countdown to Conference</h2>
+            <div id="countdown" class="d-flex justify-content-center flex-wrap gap-4">
+                <div><span id="days">--</span><div class="small">Days</div></div>
+                <div><span id="hours">--</span><div class="small">Hours</div></div>
+                <div><span id="minutes">--</span><div class="small">Minutes</div></div>
+                <div><span id="seconds">--</span><div class="small">Seconds</div></div>
             </div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseInternal' aria-expanded='false' aria-controls='collapseInternal'>
-                [Show Bio]
-            </button>
-        ">
-  Head of Internal Affairs
-</button>
-
-  <button class="role-btn" 
-    data-role="Head of External Affairs" 
-    data-name="to be announced"
-    data-img="potolios.jpg" 
-    data-info="
-        <h4 style='color: var(--teal);'>to be announced</h4>
-        <div id='collapseExternal' class='collapse'>
-            <p>                     </p>
+            <div class="text-center mt-4">
+                <button type="button" class="btn hero-btn btn-teal" data-bs-toggle="modal" data-bs-target="#introModal"><i class="fas fa-info-circle me-2"></i> Introductory note</button>
+            </div>
         </div>
-        <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExternal' aria-expanded='false' aria-controls='collapseExternal'>
-            [Show Bio]
-        </button>
-    ">
-    Head of External Affairs
-  </button>
+    </section>
 
-</div>
-
-    <div class="section">
-      <h2>2027 Committees</h2>
-      
-      <button class="role-btn"
-              data-committee="Security Council 1 (UNSC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        Security Council 1 (UNSC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Security Council 2 (UNSC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        Security Council 2 (UNSC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Committee on Digital Affairs & Sovereignty"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        Digital Affairs & Sovereignty
-      </button>
-
-      <button class="role-btn"
-              data-committee="Economic and Social Council (ECOSOC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        Economic and Social Council (ECOSOC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="UNESCO"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        UNESCO
-      </button>
-
-      <button class="role-btn"
-              data-committee="UN Environment Programme (UNEP)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        UN Environment Programme (UNEP)
-      </button>
-
-      <button class="role-btn"
-              data-committee="World Health Organisation (WHO)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        World Health Organisation (WHO)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Human Rights Council (HRC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        Human Rights Council (HRC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="UN Women"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        UN Women
-      </button>
-
-      <button class="role-btn"
-              data-committee="SOCHUM"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        Social, Humanitarian & Cultural Committee (SOCHUM)
-      </button>
-
-      <button class="role-btn"
-              data-committee="UN Office on Drugs and Crime (UNODC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        UN Office on Drugs and Crime (UNODC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Historical Crisis Committee (HCC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        Historical Crisis Committee (HCC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Special Tribunal (STIPS)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        Special Tribunal (STIPS)
-      </button>
-
-      <button class="role-btn"
-              data-committee="NATO"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="<hr><h4 style='color: var(--teal);'>Chair: To be announced</h4>">
-        NATO
-      </button>
-    </div>
-
-    <div class="section">
-      <h2>The Staff</h2>
-      <button class="role-btn" data-role="Head of Staff" data-info="<p>To be announced.</p>">Head of Staff</button>
-      <button class="role-btn" data-role="Committee Staff Members" data-info="<p>To be announced.</p>">Committee Staff Members</button>
-    </div>
-
-    <div class="section">
-        <h2>The Press</h2>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <div class="col">
-            <button class="role-btn small-role-btn" data-name="Antigoni Klironomou" data-role="Press Member" data-img="press_klironomou.jpg" data-info="<p><strong>Press Member:</strong> Antigoni Klironomou details...</p>">
-              Antigoni Klironomou
-            </button>
-          </div>
-          <div class="col">
-            <button class="role-btn small-role-btn" data-name="Georgia Malea" data-role="Press Member" data-img="malea.jpg" data-info="<p><strong>Press Member:</strong> Georgia Malea details...</p>">
-              Georgia Malea
-            </button>
-          </div>
-          <div class="col">
-            <button class="role-btn small-role-btn" data-name="Anastasia Poimenidou" data-role="Press Member" data-img="poimenidou.jpg" data-info="<p><strong>Press Member:</strong> Anastasia Poimenidou details...</p>">
-              Anastasia Poimenidou
-            </button>
-          </div>
-          <div class="col">
-            <button class="role-btn small-role-btn" data-name="Sotiria Xourafa" data-role="Press Member" data-img="xourafa.jpeg" data-info="<p><strong>Press Member:</strong> Sotiria Xourafa details...</p>">
-              Sotiria Xourafa
-            </button>
-          </div>
+    <section class="container py-5">
+        <div class="text-center">
+            <h2 class="section-title">2027 Committee Break-down & Agenda</h2>
         </div>
-      </div>
-  </div>
+        
+        <div class="accordion" id="committeeAccordion">
 
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal-box">
-      <button class="close-btn" id="closeModal">&times;</button>
-      <div class="modal-gallery" id="modalGallery" style="display:none;"></div>
-      <div class="modal-single" id="modalSingle" style="display:none;"></div>
-      <h3 id="modalName"></h3>
-      <p id="modalRole"></p>
-      <div id="modalInfo"></div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sc1">1. Security Council 1 (UNSC)</button>
+                </h2>
+                <div id="sc1" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: The Weaponization of Synthetic Media: Addressing the Threat of Deep Fakes to Global Security</span>
+                        <p class="topic-desc">This topic addresses "epistemic threats"—the erosion of a shared reality. Deep fakes of world leaders could be used to manufacture "inciting incidents," such as a fake declaration of war, which could trigger immediate kinetic conflict.</p>
+                        <p class="topic-bg">Background: Traditional security relies on verifying state intent. In an era where audio and video can be perfectly fabricated, the Council must decide how to respond to non-physical threats that destabilize global markets or incite violence.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The Security Implications of Autonomous Weapon Systems and AI-Driven Decision Making</span>
+                        <p class="topic-desc">This examines the threat of "flash wars"—unintended escalations caused by AI algorithms interacting at speeds faster than human decision-making.</p>
+                        <p class="topic-bg">Background: The core challenge is establishing international protocols that maintain meaningful human control over lethal autonomous systems to prevent rapid, accidental conflict.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sc2">2. Security Council 2 (UNSC)</button>
+                </h2>
+                <div id="sc2" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: The Regulation of Private Military and Security Companies (PMSCs) in Digital Conflict Zones</span>
+                        <p class="topic-desc">Modern PMSCs act as "digital mercenaries" hired to conduct information operations or interfere in sovereign elections.</p>
+                        <p class="topic-bg">Background: These contractors provide states with plausible deniability. Delegates must debate the legal accountability of private contractors hired for these invisible frontlines.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: Countering Cyber-Terrorism: Protecting Global Financial and Civil Infrastructure from State-Linked Hacktivism</span>
+                        <p class="topic-desc">Non-state actors and state-linked "hacktivists" use sophisticated cyber tools to target critical infrastructure, such as national power grids and banking systems.</p>
+                        <p class="topic-bg">Background: The Council must determine the legal threshold for when a digital attack justifies a collective security response under the UN Charter.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#digitalAffairs">3. Committee on Digital Affairs & Sovereignty</button>
+                </h2>
+                <div id="digitalAffairs" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: Drafting the "Digital Geneva Convention": Regulating Tech Giants and Defining Cyber-Sovereignty</span>
+                        <p class="topic-desc">This hybrid committee brings together sovereign states and Tech Representatives (e.g., Meta, TikTok) to create binding rules for the digital world.</p>
+                        <p class="topic-bg">Background: Focus areas include creating standards for algorithmic transparency, data ownership, and the prevention of digital warfare while defining modern cyber-sovereignty.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The Governance of Satellite Internet Constellations and Space-Based Data Privacy</span>
+                        <p class="topic-desc">Private satellite networks provide global connectivity but bypass national firewalls, posing risks to state information control and orbital safety.</p>
+                        <p class="topic-bg">Background: Delegates must address "space-based data privacy" and ensure that orbital providers respect the digital sovereignty of the nations they cover while managing environmental risks like space debris.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ecosoc">4. Economic and Social Council (ECOSOC)</button>
+                </h2>
+                <div id="ecosoc" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: The "Truth Economy": Mitigating the Impact of Generative AI on Labour Markets and Intellectual Property</span>
+                        <p class="topic-desc">This topic focuses on protecting human employment from AI displacement and regulating AI content that scrapes human data.</p>
+                        <p class="topic-bg">Background: AI models often train on data without the consent of original creators. ECOSOC must debate how to protect intellectual property and manage the shift in labour markets caused by generative technologies.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The Rise of Decentralized Finance (DeFi) and its Threat to Global Financial Stability</span>
+                        <p class="topic-desc">Investigating the risks of unregulated crypto-assets and shadow banking systems that bypass traditional oversight.</p>
+                        <p class="topic-bg">Background: DeFi can threaten the economic security of developing nations. Delegates must find ways to regulate assets that are designed to be "decentralized" and outside state control.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unesco">5. UNESCO</button>
+                </h2>
+                <div id="unesco" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: Safeguarding History: Combating Digital Revisionism and Preserving Cultural Heritage in the Metaverse</span>
+                        <p class="topic-desc">As educational and cultural experiences move into VR/AR, there is a rising risk of "digital revisionism"—where history is inaccurately gamified or rewritten.</p>
+                        <p class="topic-bg">Background: UNESCO must ensure that AI does not compromise academic integrity or erase the historical truth of marginalized communities in virtual spaces.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: Protection of Indigenous Languages and Oral Histories from AI Data Harvesting</span>
+                        <p class="topic-desc">Ensuring that large language models (LLMs) do not exploit indigenous knowledge.</p>
+                        <p class="topic-bg">Background: Indigenous communities often have their oral histories harvested for AI training without consent. This topic focuses on creating frameworks to preserve endangered languages and protect cultural data.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unep">6. UN Environment Programme (UNEP)</button>
+                </h2>
+                <div id="unep" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: Combating "Greenwashing" and Climate Disinformation: Enforcing Transparency in Corporate Sustainability Reporting</span>
+                        <p class="topic-desc">This addresses the manipulation of environmental data by corporations or states who use misleading information to appear eco-friendly while continuing to pollute.</p>
+                        <p class="topic-bg">Background: Delegates must find ways to enforce transparency in sustainability reporting so that global climate goals are based on fact rather than marketing.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The Ecological Cost of the Digital Frontier: Regulating the Energy Consumption of AI and Crypto-Mining</span>
+                        <p class="topic-desc">AI development and crypto-mining require immense amounts of energy and water for cooling data centres.</p>
+                        <p class="topic-bg">Background: UNEP will formulate international standards for sustainable digital infrastructure to address the massive carbon footprint of the "cloud".</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#who">7. World Health Organisation (WHO)</button>
+                </h2>
+                <div id="who" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: The Impact of Social Media on Youth Health: Addressing Body Dysmorphia and Dangerous Diet Trends</span>
+                        <p class="topic-desc">Focuses on the medical and psychological outcomes of social media consumption among young people.</p>
+                        <p class="topic-bg">Background: This committee will formulate guidelines for schools, parents, and healthcare providers to identify early signs of body image disorders and combat the spread of harmful diet trends fuelled by algorithms.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: Combating Medical Populism and the Global Spread of Anti-Science Misinformation</span>
+                        <p class="topic-desc">Formulating a unified response to the erosion of public trust in healthcare providers.</p>
+                        <p class="topic-bg">Background: Health-related "fake news" significantly impacts pandemic preparedness. WHO must address how "medical populism" undermines evidence-based science and global health security.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hrc">8. Human Rights Council (HRC)</button>
+                </h2>
+                <div id="hrc" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: Safety of Journalists and the Freedom of the Press: Protecting Truth-Tellers in the Era of Digital Authoritarianism</span>
+                        <p class="topic-desc">Examining ways to prevent the use of "fake news" laws to silence dissent and ensure the physical safety of reporters in conflict zones.</p>
+                        <p class="topic-bg">Background: As guardians of factual information, journalists are increasingly targeted by digital surveillance and state-mandated internet shutdowns.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The Right to be Forgotten: Balancing Privacy with the Public’s Right to Historical Truth</span>
+                        <p class="topic-desc">Debating the right to erase one's digital past versus the importance of maintaining an accurate historical record.</p>
+                        <p class="topic-bg">Background: This topic explores the legal tension between individual privacy and the transparency required for public accountability and historical accuracy.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unWomen">9. UN Women</button>
+                </h2>
+                <div id="unWomen" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: Digital Gender-Based Violence: Addressing Non-Consensual Deep fakes and Online Misogyny</span>
+                        <p class="topic-desc">Targeting the rise of AI-generated non-consensual pornography and the use of technology to stalk or harass women.</p>
+                        <p class="topic-bg">Background: Digital tools are increasingly weaponized to silence female voices and perpetuate misogyny through hyper-realistic deep fakes.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The Gendered Impact of AI Recruitment Bias and Digital Financial Exclusion</span>
+                        <p class="topic-desc">Examining how automated hiring systems and financial algorithms reinforce gender discrimination.</p>
+                        <p class="topic-bg">Background: Delegates will create guidelines for ethical AI to ensure that automated systems do not exclude women from the workforce or financial services.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sochum">10. Social, Humanitarian & Cultural Committee (SOCHUM)</button>
+                </h2>
+                <div id="sochum" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: The Ethics of Digital Identity: Addressing the Human Rights of Stateless Persons in the Virtual World</span>
+                        <p class="topic-desc">Examining the impact of biometric identification and digital citizenship on refugees and stateless populations.</p>
+                        <p class="topic-bg">Background: This committee ensures that technology serves as a tool for inclusion rather than surveillance, specifically for those who lack traditional state-recognized identity documents.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: Digital Colonialism and the Protection of Indigenous Knowledge in the AI Era</span>
+                        <p class="topic-desc">Debating the ethics of mass-scraping cultural data for AI training without consent.</p>
+                        <p class="topic-bg">Background: This topic explores how digital platforms can perpetuate colonial power dynamics and seeks to formulate rights-based frameworks for the protection of indigenous communities.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unodc">11. UN Office on Drugs and Crime (UNODC)</button>
+                </h2>
+                <div id="unodc" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: Dark-Web Marketplaces: Combatting the Digital Trade of Synthetic Narcotics and Illicit Small Arms</span>
+                        <p class="topic-desc">Addressing the rise of anonymous digital bazaars that facilitate transnational crime.</p>
+                        <p class="topic-bg">Background: UNODC will formulate international strategies to track and dismantle the "cyber-syndicates" that operate with impunity in the dark web.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The Rise of Ransomware as a Tool for Transnational Extortion: Protecting Global Civic Infrastructure</span>
+                        <p class="topic-desc">Examining legal frameworks to prosecute cyber-ransom groups that hold civic infrastructure hostage.</p>
+                        <p class="topic-bg">Background: This topic focuses on developing shared protocols to protect public hospitals and utilities from digital hostage-taking and extortion.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hcc">12. Historical Crisis Committee (HCC)</button>
+                </h2>
+                <div id="hcc" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: The Chernobyl Disaster (1986): The Cost of Lies</span>
+                        <p class="topic-desc">A crisis simulation focused on "Epistemic Security".</p>
+                        <p class="topic-bg">Background: Delegates must navigate the containment of both radiation and information, addressing the Soviet Union's attempt to hide the truth from the world.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The 1962 Cuban Missile Crisis: Information Brinkmanship and the Management of Signal Intelligence</span>
+                        <p class="topic-desc">A fast-paced environment where delegates must manage conflicting reports and hidden agendas.</p>
+                        <p class="topic-bg">Background: Focus is on preventing nuclear war in a world of imperfect information and managing high-stakes signal intelligence (SIGINT).</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stips">13. Special Tribunal on Intellectual & Political Subversion (STIPS)</button>
+                </h2>
+                <div id="stips" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: The Impiety Trial of Aspasia of Miletus: Character Assassination as a Political Weapon</span>
+                        <p class="topic-desc">Delegates litigate the charges against Aspasia, one of Athens' greatest minds, in a trial exploring character assassination.</p>
+                        <p class="topic-bg">Background: This topic explores the thin line between personal freedom and state-mandated morality in a trial investigating gendered disinformation in ancient Greece.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: The Defence of Hypatia of Alexandria: Scientific Truth vs. Religious Populism</span>
+                        <p class="topic-desc">Simulating the judicial defines of Hypatia against charges of sorcery and political subversion.</p>
+                        <p class="topic-bg">Background: This trial addresses the historical cost of suppressing intellectual and scientific truth in the name of political stability.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nato">14. NATO</button>
+                </h2>
+                <div id="nato" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic 1: Cognitive Warfare: Countering Hybrid Threats and Disinformation Campaigns Targeting Alliance Unity</span>
+                        <p class="topic-desc">Strategies to defend against social media bots and information warfare aimed at eroding trust in democratic institutions.</p>
+                        <p class="topic-bg">Background: NATO must define how to defend against non-kinetic "cognitive" attacks that target the mind as a domain of war.</p>
+                        <hr>
+                        <span class="topic-label">Topic 2: Securing Undersea Communications Infrastructure and Protecting Transatlantic Data Cables</span>
+                        <p class="topic-desc">Defending the physical backbone of the global internet from state-sponsored sabotage.</p>
+                        <p class="topic-bg">Background: This topic focuses on ensuring the continuity of intelligence sharing during cyber-crises by protecting the vital undersea cables that facilitate transatlantic data flow.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unga">15. UN General Assembly (UNGA)</button>
+                </h2>
+                <div id="unga" class="accordion-collapse collapse" data-bs-parent="#committeeAccordion">
+                    <div class="accordion-body">
+                        <span class="topic-label">Topic: The Universal Right to Truth: Establishing International Norms Against State-Sponsored Disinformation</span>
+                        <p class="topic-desc">Addressing the "Post-Truth" era and debating whether access to factual information is a human right.</p>
+                        <p class="topic-bg">Background: The Assembly will determine how the UN can sanction states that weaponize misinformation against their own citizens or other nations.</p>
+                        <a href="https://drive.google.com/drive/folders/1UuCRktloz7bHFi9so1zCWPfLRGuL0Rin?usp=sharing" target="_blank" class="btn-study-guide"><i class="fas fa-book-open me-2"></i> Study Guide</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title">Terms and Conditions</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body" style="text-align: justify; padding: 2rem;">
+                    <p><strong>Institutional Status:</strong> PyleaMUN is a non-profit educational initiative hosted and administered entirely by a public state school.</p>
+                    <p><strong>Zero-Fee Policy:</strong> PyleaMUN is a strictly free-of-charge conference. No registration or participation fees are levied.</p>
+                    <p><strong>Logistical Responsibilities:</strong> Participants are responsible for transportation, accommodation, and meals.</p>
+                    <p><strong>Data Privacy (GDPR):</strong> Information collected during registration will be used exclusively for conference administration.</p>
+                    <p><strong>Certificate Eligibility:</strong> Certificates are awarded only to those who attend all scheduled sessions.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btns = document.querySelectorAll('.role-btn');
-      const overlay = document.getElementById('modalOverlay');
-      const gallery = document.getElementById('modalGallery');
-      const single = document.getElementById('modalSingle');
-      const nameEl = document.getElementById('modalName');
-      const roleEl = document.getElementById('modalRole');
-      const infoEl = document.getElementById('modalInfo');
-      const body = document.body;
+    <div class="modal fade" id="introModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title">Introductory note</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body" style="text-align: justify; padding: 2rem;">
+                    <h4 class="text-center mb-4" style="color: #008080; font-weight: 900;">The Universal Right to Truth</h4>
+                    <p>Thessaloniki — ancient crossroads of ideas and empires — beckons the next wave of young diplomats to ignite bold solutions, fuse tradition with technology, and chart a resilient future.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-star intro-icon"></i> <strong>Why Here?</strong> From the White Tower to the waterfront, history's lessons fuel your vision.</li>
+                        <li class="mb-3"><i class="fas fa-bolt intro-icon"></i> <strong>Why Now?</strong> In an era of digital shadows, you are the architects of transparency.</li>
+                        <li class="mb-3"><i class="fas fa-crosshairs intro-icon"></i> <strong>Your Mission:</strong> Unite, debate, draft — and defend the integrity of the global narrative.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          gallery.innerHTML = ''; single.innerHTML = '';
-          gallery.style.display = 'none'; single.style.display = 'none';
+    <footer class="text-center">
+        <div class="container"><p>&copy; 2027 PyleaMUN. All rights reserved.</p></div>
+    </footer>
 
-          nameEl.textContent = btn.dataset.name || btn.dataset.committee || btn.dataset.role || '';
-          roleEl.textContent = btn.dataset.role || btn.dataset.committee || '';
-          infoEl.innerHTML = btn.dataset.info || '';
-
-          if (btn.dataset.img1 !== undefined) {
-            gallery.style.display = 'flex';
-            for (let i = 1; i <= 3; i++) {
-              const img = new Image();
-              let imgSrc = btn.dataset[`img${i}`];
-              img.src = imgSrc ? imgSrc : 'default-profile.png';
-              img.onerror = () => { img.src = 'default-profile.png'; };
-              img.style.width = '120px'; img.style.height = '120px'; img.style.borderRadius = '50%'; 
-              img.style.objectFit = 'cover'; img.style.border = '3px solid var(--gold)'; img.style.margin = '0 0.5rem';
-              gallery.appendChild(img);
-            }
-          } else if (btn.dataset.img) {
-            single.style.display = 'flex';
-            const img = new Image();
-            img.src = btn.dataset.img;
-            img.onerror = () => img.src = 'default-profile.png';
-            img.style.width = '120px'; img.style.height = '120px'; img.style.borderRadius = '50%'; img.style.objectFit = 'cover'; img.style.border = '3px solid var(--gold)';
-            single.appendChild(img);
-          }
-
-          overlay.classList.add('active');
-          body.classList.add('modal-open');
-        });
-      });
-
-      const closeModal = () => { overlay.classList.remove('active'); body.classList.remove('modal-open'); };
-      document.getElementById('closeModal').addEventListener('click', closeModal);
-      overlay.addEventListener('click', e => e.target === overlay && closeModal());
-    });
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const deadline = new Date('February 11, 2027 08:00:00').getTime();
+        function updateCountdown() {
+            const now = Date.now();
+            const t = deadline - now;
+            if (t <= 0) { document.getElementById('countdown-section').innerHTML = "<div class='container py-5'><p class='fs-4 text-success'>The Conference has started!</p></div>"; return; }
+            document.getElementById('days').textContent = Math.floor(t / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').textContent = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').textContent = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('seconds').textContent = Math.floor((t % (1000 * 60)) / 1000);
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); 
+    </script>
 </body>
 </html>
