@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* UPDATED SETTINGS: Background color changed to #fffce6 to match logo */
     :root { 
         --nav-bg:#fffce6; 
         --teal:#006d7a; 
@@ -47,7 +46,6 @@
     }
 
     header{text-align:center; margin:2rem 0;} 
-    
     header img{max-width:200px; margin-bottom:1rem;}
     
     h1{ font-family:'Playfair Display',serif; color:var(--teal); font-size:2.5rem; margin-bottom:2rem; }
@@ -56,6 +54,7 @@
     
     .role-btn{ display:block; width:100%; text-align:left; background:none; border:2px solid var(--teal); padding:.5rem; border-radius:4px; font-weight:bold; color:var(--teal); transition:.3s; margin-bottom:.5rem; }
     .role-btn:hover{ background:var(--teal); color:#fff; }
+    
     .modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.6); display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:.3s; z-index:1050; }
     .modal-overlay.active{ opacity:1; visibility:visible; }
     .modal-box{ 
@@ -118,604 +117,115 @@
 
     <div class="section">
       <h2>PyleaMUN Leadership</h2>
-      <button class="role-btn" 
-              data-name="Panagiotis Domvros" 
-              data-role="President & Director" 
-              data-img="domvros.png" 
-              data-info="<p>Panagiotis Domvros, MA in Theatre Studies (University of Leeds) and BA in English Language & Literature (Aristotle University of Thessaloniki), brings over two decades of educational leadership to our Model United Nations. Since 2017 he has served as Principal in Secondary Education spearheading intercultural dialogue initiatives, conflict-resolution workshops and digital‐skills training for both students and teachers. As President and Director, he will leverage his extensive experience as an I.E.P. expert trainer and teacher-trainer to cultivate a dynamic, inclusive environment that empowers delegates to develop their diplomatic, analytical and collaborative skills. He will oversee all conference operations.</p>">
-          President & Director
-      </button>
-      <button class="role-btn"
-              data-name="Fani Vasilikou"
-              data-role="Director & Chief Advisor"
-              data-img="Vasilikou.jpg"
-              data-info="<p>Fani Vasilikou has dedicated her life to empowering young minds. As an English teacher in Secondary Education for over 30 years, she has inspired generations of students with her passion for language, learning, and global citizenship. Holding a BA in English Language and Literature from Aristotle University of Thessaloniki and an MA in Enabling Learning from Canterbury University, she combines academic excellence with inclusive, student-centered teaching. For 15 years, she has been mentoring students to develop their voices and diplomatic skills in MUN conferences regionally and abroad. As the Co-director of the PyleaMun, she will contribute to the organization of the conference through her vision, leadership, and unwavering commitment aiming to establish it as a respected and enriching educational event.She will provide guidance and ensure the conference meets educational goals.</p>">
-          Director & Chief Advisor
-      </button>
-      <button class="role-btn"
-              data-name="Lemonia Dimina"
-              data-role="Deputy Director & Advisor"
-              data-img="dimina.jpg"
-              data-info="<p>Lemonia Dimina serves as Deputy Director & Advisor, working closely with the President and the Director & Chief Advisor to support the overall planning, coordination, and academic vision of PyleaMUN. She contributes to strategic decisions and provides guidance across committees and conference operations, helping ensure that the conference remains inclusive, well-organised, and academically rigorous.</p>">
-        Deputy Director & Advisor
-      </button>
-      <button class="role-btn" 
-              data-name="Nickolas Loukas" 
-              data-role="Technical, Artistic Director & Under Secretary General of Logistics" 
-              data-img="Loukas.png" 
-              data-info="<p>Hi MUNers!  
-I'm Nickolas Loukas, a 17-year-old student passionate about organization, creativity, and teamwork. Having participated in several MUN conferences, I’ve learned how meaningful it is to combine structure with innovation.  
-As Under Secretary-General of Logistics, I’m dedicated to ensuring a smooth and efficient conference for every delegate. At the same time, my role as Artistic & Technical Director allows me to bring ideas to life through design, media, and technical coordination.  
-Each conference has taught me something new—not only about global issues, but also about myself. Through MUN, I’ve learned how to listen, lead, and seek common ground. I truly believe MUN is one of the most valuable experiences of my life so far. As this conference has so much to offer me, I hope to give back with my enthusiasm, experience, and dedication.
-Looking forward to an amazing session with all of you!</p>">
-          Technical, Artistic Director & Under Secretary General of Logistics
-      </button>
+      <button class="role-btn" data-name="Panagiotis Domvros" data-role="President & Director" data-img="domvros.png" data-info="<p>Panagiotis Domvros, MA in Theatre Studies (University of Leeds) and BA in English Language & Literature (Aristotle University of Thessaloniki), brings over two decades of educational leadership to our Model United Nations. Since 2017 he has served as Principal in Secondary Education spearheading intercultural dialogue initiatives, conflict-resolution workshops and digital‐skills training for both students and teachers. As President and Director, he will leverage his extensive experience as an I.E.P. expert trainer and teacher-trainer to cultivate a dynamic, inclusive environment that empowers delegates to develop their diplomatic, analytical and collaborative skills. He will oversee all conference operations.</p>">President & Director</button>
+      
+      <button class="role-btn" data-name="Fani Vasilikou" data-role="Director & Chief Advisor" data-img="Vasilikou.jpg" data-info="<p>Fani Vasilikou has dedicated her life to empowering young minds. As an English teacher in Secondary Education for over 30 years, she has inspired generations of students with her passion for language, learning, and global citizenship. Holding a BA in English Language and Literature from Aristotle University of Thessaloniki and an MA in Enabling Learning from Canterbury University, she combines academic excellence with inclusive, student-centered teaching. For 15 years, she has been mentoring students to develop their voices and diplomatic skills in MUN conferences regionally and abroad. As the Co-director of the PyleaMun, she will contribute to the organization of the conference through her vision, leadership, and unwavering commitment aiming to establish it as a respected and enriching educational event. She will provide guidance and ensure the conference meets educational goals.</p>">Director & Chief Advisor</button>
+      
+      <button class="role-btn" data-name="Lemonia Dimina" data-role="Deputy Director & Advisor" data-img="dimina.jpg" data-info="<p>Lemonia Dimina serves as Deputy Director & Advisor, working closely with the President and the Director & Chief Advisor to support the overall planning, coordination, and academic vision of PyleaMUN. She contributes to strategic decisions and provides guidance across committees and conference operations, helping ensure that the conference remains inclusive, well-organised, and academically rigorous.</p>">Deputy Director & Advisor</button>
+      
+      <button class="role-btn" data-name="Nickolas Loukas" data-role="Technical, Artistic Director & Under Secretary General of Logistics" data-img="Loukas.png" data-info="<p>Hi MUNers! I'm Nickolas Loukas, a 17-year-old student passionate about organization, creativity, and teamwork. Having participated in several MUN conferences, I’ve learned how meaningful it is to combine structure with innovation. As Under Secretary-General of Logistics, I’m dedicated to ensuring a smooth and efficient conference for every delegate. At the same time, my role as Artistic & Technical Director allows me to bring ideas to life through design, media, and technical coordination. Each conference has taught me something new—not only about global issues, but also about myself. Through MUN, I’ve learned how to listen, lead, and seek common ground. I truly believe MUN is one of the most valuable experiences of my life so far. As this conference has so much to offer me, I hope to give back with my enthusiasm, experience, and dedication. Looking forward to an amazing session with all of you!</p>">Technical, Artistic Director & Under Secretary General of Logistics</button>
     </div>
 
     <div class="section">
       <h2>Senior Student Advisors</h2>
-      <button class="role-btn"
-              data-name="Alexandra Moutropoulou"
-              data-role="Senior Student Advisor"
-              data-img="Alexandra.jpg"
-              data-info="<p>Hi everyone! My name is Alexandra Moutropoulou, and I recently graduated from the Faculty of Law at Aristotle University of Thessaloniki. I still remember participating in my very first MUN conference as a high school student — little did I know how much it would shape my academic and personal journey. Since then, I have taken part in over 20 MUN conferences, both in Greece and abroad, serving in various roles such as delegate, chair, and member of the Secretariat. I also had the honor of serving as President of the United Nations Society of AUTh during the 2024–2025 academic year, an experience that truly deepened my commitment to diplomacy, dialogue, and leadership. To all those who are just beginning their MUN journey, my advice is this: never be afraid to step out of your comfort zone and never set limits on what you can achieve!</p>">
-        Alexandra Moutropoulou
-      </button>
-      <button class="role-btn"
-              data-name="Filippos Kokkonos"
-              data-role="Senior Student Advisor"
-              data-img="Filippos.jpg"
-              data-info="<p>My name is Filippos Kokkonos, I am a final year law student in the Aristotle University of Thessaloniki. I started my MUN journey four years ago and I cannot imagine how my university life would be without it. I have participated in various MUNs in Greece and abroad, in multiple positions, and I have a soft spot for crisis committees.</p>">
-        Filippos Kokkonos
-      </button>
+      <button class="role-btn" data-name="Alexandra Moutropoulou" data-role="Senior Student Advisor" data-img="Alexandra.jpg" data-info="<p>Hi everyone! My name is Alexandra Moutropoulou, and I recently graduated from the Faculty of Law at Aristotle University of Thessaloniki. I still remember participating in my very first MUN conference as a high school student — little did I know how much it would shape my academic and personal journey. Since then, I have taken part in over 20 MUN conferences, both in Greece and abroad, serving in various roles such as delegate, chair, and member of the Secretariat. I also had the honor of serving as President of the United Nations Society of AUTh during the 2024–2025 academic year, an experience that truly deepened my commitment to diplomacy, dialogue, and leadership. To all those who are just beginning their MUN journey, my advice is this: never be afraid to step out of your comfort zone and never set limits on what you can achieve!</p>">Alexandra Moutropoulou</button>
+      
+      <button class="role-btn" data-name="Filippos Kokkonos" data-role="Senior Student Advisor" data-img="Filippos.jpg" data-info="<p>My name is Filippos Kokkonos, I am a final year law student in the Aristotle University of Thessaloniki. I started my MUN journey four years ago and I cannot imagine how my university life would be without it. I have participated in various MUNs in Greece and abroad, in multiple positions, and I have a soft spot for crisis committees.</p>">Filippos Kokkonos</button>
     </div>
 
     <div class="section">
       <h2>General Assembly Secretariat</h2>
-      
-      <button class="role-btn"
-              data-name="Evangelos Papadopoulos"
-              data-role="President of the GA"
-              data-img="papdopoulos.png"
-              data-info="
-                  <h4 style='color: var(--teal);'>Evangelos Papadopoulos</h4>
-                  <p><strong>Contact:</strong> vnglspapadopoulos@gmail.com</p>
-                  <div id='collapseEvangelos' class='collapse'>
-                      <p>I am <strong>Evangelos Papadopoulos</strong>, a 17-year-old student at the 1st Senior High School of Pylea, serving as <strong>President of the General Assembly</strong> for the Pylea Model United Nations session. Having participated in numerous MUN conferences both in Greece and internationally—as delegate and chair—I bring a deep understanding of diplomacy, international relations, and public speaking. I’m committed to making PyleaMUN an engaging, high-quality experience and look forward to fostering meaningful dialogue and future leaders!</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseEvangelos' aria-expanded='false' aria-controls='collapseEvangelos'>
-                      [Show Bio]
-                  </button>
-              ">
-        President of the GA
-      </button>
+      <button class="role-btn" data-name="Evangelos Papadopoulos" data-role="President of the GA" data-img="papdopoulos.png" data-info="
+          <h4 style='color: var(--teal);'>Evangelos Papadopoulos</h4>
+          <p><strong>Contact:</strong> vnglspapadopoulos@gmail.com</p>
+          <div id='collapseEvangelos' class='collapse'>
+              <p>I am <strong>Evangelos Papadopoulos</strong>, a 17-year-old student at the 1st Senior High School of Pylea, serving as <strong>President of the General Assembly</strong> for the Pylea Model United Nations session. Having participated in numerous MUN conferences both in Greece and internationally—as delegate and chair—I bring a deep understanding of diplomacy, international relations, and public speaking. I’m committed to making PyleaMUN an engaging, high-quality experience and look forward to fostering meaningful dialogue and future leaders!</p>
+          </div>
+          <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseEvangelos' aria-expanded='false'>[Show Bio]</button>">President of the GA</button>
 
-      <button class="role-btn" 
-              data-name="Ioanna Zarogianni" 
-              data-role="Deputy President of the GA" 
-              data-img="zarogianni.jpg" 
-              data-info="
-                  <h4 style='color: var(--teal);'>Ioanna Zarogianni</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseZarogianni' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseZarogianni' aria-expanded='false' aria-controls='collapseZarogianni'>
-                      [Show Bio]
-                  </button>
-              ">
-        Deputy President of the GA
-      </button>
+      <button class="role-btn" data-name="Ioanna Zarogianni" data-role="Deputy President of the GA" data-img="zarogianni.jpg" data-info="
+          <h4 style='color: var(--teal);'>Ioanna Zarogianni</h4>
+          <p><strong>Contact:</strong> To be announced</p>
+          <div id='collapseZarogianni' class='collapse'><p>Bio information to be announced.</p></div>
+          <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseZarogianni' aria-expanded='false'>[Show Bio]</button>">Deputy President of the GA</button>
 
-      <button class="role-btn" 
-              data-name="Alexandros Potolios" 
-              data-role="Secretary General" 
-              data-img="potolios.jpg" 
-              data-info="
-                  <h4 style='color: var(--teal);'>Alexandros Potolios</h4>
-                  <p><strong>Contact:</strong> potoliosalexandros@gmail.com</p>
-                  <div id='collapsePotolios' class='collapse'>
-                      <p>Alexandros Potolios is a 17-year-old student at Arsakeio High School of Thessaloniki and it is his greatest honor to serve as the Secretary-General of PyleaMUN.
+      <button class="role-btn" data-name="Alexandros Potolios" data-role="Secretary General" data-img="potolios.jpg" data-info="
+          <h4 style='color: var(--teal);'>Alexandros Potolios</h4>
+          <p><strong>Contact:</strong> potoliosalexandros@gmail.com</p>
+          <div id='collapsePotolios' class='collapse'><p>Alexandros Potolios is a 17-year-old student at Arsakeio High School of Thessaloniki and it is his greatest honor to serve as the Secretary-General of PyleaMUN. His journey into diplomacy and debate began in the 7th grade, when he first discovered his passion for international relations and public speaking. Since then, he has actively participated in numerous MUN conferences, both nationally and internationally, competed in debate tournaments, and engaged deeply within the European Youth Parliament (EYP) community. As Secretary-General, his vision is to cultivate an inspiring and intellectually stimulating conference environment.</p></div>
+          <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapsePotolios' aria-expanded='false'>[Show Bio]</button>">Secretary General</button>
 
-His journey into diplomacy and debate began in the 7th grade, when he first discovered his passion for international relations and public speaking. Since then, he has actively participated in numerous Model United Nations conferences, both nationally and internationally, competed in debate tournaments, and engaged deeply within the European Youth Parliament (EYP) community.
-Through these experiences, Alexandros has been privileged to receive several distinctions and to undertake leadership roles that have significantly shaped his character, strengthening his dedication to diplomacy, collaboration, and academic excellence.
-As Secretary-General of PyleaMUN, his vision is to cultivate an inspiring and intellectually stimulating conference environment. He is committed to ensuring the smooth organization of the conference, maintaining high academic standards, and fostering a space where delegates feel empowered to exchange ideas, challenge perspectives, and grow both personally and academically.
-Alexandros eagerly looks forward to welcoming you next February and to sharing with you an engaging, dynamic, and truly unforgettable PyleaMUN experience.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapsePotolios' aria-expanded='false' aria-controls='collapsePotolios'>
-                      [Show Bio]
-                  </button>
-              ">
-        Secretary General
-      </button>
+      <button class="role-btn" data-name="Sofia Sougari" data-role="Deputy Secretary General" data-img="sougari.jpg" data-info="
+          <h4 style='color: var(--teal);'>Sofia Sougari</h4>
+          <p><strong>Contact:</strong> To be announced</p>
+          <div id='collapseSougari' class='collapse'><p>Bio information to be announced.</p></div>
+          <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSougari' aria-expanded='false'>[Show Bio]</button>">Deputy Secretary General</button>
 
-      <button class="role-btn" 
-              data-name="Sofia Sougari" 
-              data-role="Deputy Secretary General" 
-              data-img="sougari.jpg" 
-              data-info="
-                  <h4 style='color: var(--teal);'>Sofia Sougari</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseSougari' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSougari' aria-expanded='false' aria-controls='collapseSougari'>
-                      [Show Bio]
-                  </button>
-              ">
-        Deputy Secretary General
-      </button>
-
-      <button class="role-btn" 
-              data-name="Nickolas Loukas" 
-              data-role="Under Secretary General of Logistics" 
-              data-img="Loukas.png" 
-              data-info="
-                  <h4 style='color: var(--teal);'>Nickolas Loukas</h4>
-                  <p><strong>Contact:</strong> NickolasLoukas.pyleamun@mail.com</p>
-                  <div id='collapseLoukas' class='collapse'>
-                      <p>Hi MUNers!  
-I'm Nickolas Loukas, a 17-year-old student passionate about organization, creativity, and teamwork. Having participated in several MUN conferences, I’ve learned how meaningful it is to combine structure with innovation.  
-As Under Secretary-General of Logistics, I’m dedicated to ensuring a smooth and efficient conference for every delegate. At the same time, my role as Artistic & Technical Director allows me to bring ideas to life through design, media, and technical coordination.  
-Each conference has taught me something new—not only about global issues, but also about myself. Through MUN, I’ve learned how to listen, lead, and seek common ground. I truly believe MUN is one of the most valuable experiences of my life so far. As this conference has so much to offer me, I hope to give back with my enthusiasm, experience, and dedication.
-Looking forward to an amazing session with all of you!</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseLoukas' aria-expanded='false' aria-controls='collapseLoukas'>
-                      [Show Bio]
-                  </button>
-              ">
-          Under Secretary General of Logistics
-      </button>
+      <button class="role-btn" data-name="Nickolas Loukas" data-role="Under Secretary General of Logistics" data-img="Loukas.png" data-info="
+          <h4 style='color: var(--teal);'>Nickolas Loukas</h4>
+          <p><strong>Contact:</strong> NickolasLoukas.pyleamun@mail.com</p>
+          <div id='collapseLoukas' class='collapse'><p>Hi MUNers! I'm Nickolas Loukas, a 17-year-old student passionate about organization, creativity, and teamwork. As Under Secretary-General of Logistics, I’m dedicated to ensuring a smooth and efficient conference for every delegate. At the same time, my role as Artistic & Technical Director allows me to bring ideas to life through design, media, and technical coordination.</p></div>
+          <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseLoukas' aria-expanded='false'>[Show Bio]</button>">Under Secretary General of Logistics</button>
     </div>
 
     <div class="section">
       <h2>Executive Team</h2>
-
-      <button class="role-btn"
-            data-name="Dimitrios Bitses"
-            data-role="Head of Internal Affairs"
-            data-img="default-profile.png"
-            data-info="
-                <h4 style='color: var(--teal);'>Dimitrios Bitses</h4>
+      <button class="role-btn" data-name="Dimitrios Bitzes" data-role="Head of Internal Affairs" data-img="bitzes.jpg" data-info="
+                <h4 style='color: var(--teal);'>Dimitrios Bitzes</h4>
                 <p><strong>Contact:</strong> To be announced</p>
                 <div id='collapseInternal' class='collapse'>
                     <p>Hello, my name is Dimitris Bitzes and next year I will be a first year high school student. I actively participate in international organization simulation activities. I was a member of the PyleaMUN 2026 organizing team, contributing to the smooth running of the conference. I have strong collaboration skills, a sense of responsibility and a great interest in international relations. I look forward to seeing you all!</p>
                 </div>
-                <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseInternal' aria-expanded='false' aria-controls='collapseInternal'>
-                    [Show Bio]
-                </button>
-            ">
-        Head of Internal Affairs
-      </button>
+                <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseInternal' aria-expanded='false'>[Show Bio]</button>
+            ">Head of Internal Affairs</button>
 
-      <button class="role-btn" 
-        data-role="Head of External Affairs" 
-        data-name="Eleni Proestou"
-        data-img="proestou.jpg" 
-        data-info="
+      <button class="role-btn" data-name="Eleni Proestou" data-role="Head of External Affairs" data-img="proestou.jpg" data-info="
             <h4 style='color: var(--teal);'>Eleni Proestou</h4>
             <p><strong>Contact:</strong> To be announced</p>
-            <div id='collapseExternal' class='collapse'>
-                <p>Bio information to be announced.</p>
-            </div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExternal' aria-expanded='false' aria-controls='collapseExternal'>
-                [Show Bio]
-            </button>
-        ">
-        Head of External Affairs
-      </button>
+            <div id='collapseExternal' class='collapse'><p>Bio information to be announced.</p></div>
+            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExternal' aria-expanded='false'>[Show Bio]</button>">Head of External Affairs</button>
 
-      <button class="role-btn" data-name="To be announced" data-role="Financial Oversight" data-info="
-            <h4 style='color: var(--teal);'>To be announced</h4>
-            <p><strong>Contact:</strong> To be announced</p>
-            <div id='collapseFin' class='collapse'>
-                <p>Bio information to be announced.</p>
-            </div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFin' aria-expanded='false' aria-controls='collapseFin'>
-                [Show Bio]
-            </button>
-        ">Financial Oversight Team</button>
-
-      <button class="role-btn" data-name="To be announced" data-role="Technical Executive Advisor" data-info="
-            <h4 style='color: var(--teal);'>To be announced</h4>
-            <p><strong>Contact:</strong> To be announced</p>
-            <div id='collapseTech' class='collapse'>
-                <p>Bio information to be announced.</p>
-            </div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTech' aria-expanded='false' aria-controls='collapseTech'>
-                [Show Bio]
-            </button>
-        ">Technical Executive Advisor</button>
-
-      <button class="role-btn" data-name="To be announced" data-role="Staff Executive Supervisor" data-info="
-            <h4 style='color: var(--teal);'>To be announced</h4>
-            <p><strong>Contact:</strong> To be announced</p>
-            <div id='collapseStaffSup' class='collapse'>
-                <p>Bio information to be announced.</p>
-            </div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseStaffSup' aria-expanded='false' aria-controls='collapseStaffSup'>
-                [Show Bio]
-            </button>
-        ">Staff Executive Supervisor</button>
+      <button class="role-btn" data-name="To be announced" data-role="Financial Oversight" data-info="<h4 style='color: var(--teal);'>To be announced</h4><div id='collapseFin' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFin' aria-expanded='false'>[Show Bio]</button>">Financial Oversight Team</button>
+      <button class="role-btn" data-name="To be announced" data-role="Technical Executive Advisor" data-info="<h4 style='color: var(--teal);'>To be announced</h4><div id='collapseTech' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTech' aria-expanded='false'>[Show Bio]</button>">Technical Executive Advisor</button>
+      <button class="role-btn" data-name="To be announced" data-role="Staff Executive Supervisor" data-info="<h4 style='color: var(--teal);'>To be announced</h4><div id='collapseStaffSup' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseStaffSup' aria-expanded='false'>[Show Bio]</button>">Staff Executive Supervisor</button>
     </div>
 
     <div class="section">
       <h2>2027 Committees</h2>
-      
-      <button class="role-btn"
-              data-committee="Security Council 1 (UNSC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseSC1' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSC1' aria-expanded='false' aria-controls='collapseSC1'>
-                      [Show Bio]
-                  </button>
-              ">
-        Security Council 1 (UNSC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Security Council 2 (UNSC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseSC2' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSC2' aria-expanded='false' aria-controls='collapseSC2'>
-                      [Show Bio]
-                  </button>
-              ">
-        Security Council 2 (UNSC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Committee on Digital Affairs & Sovereignty"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseDigital' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseDigital' aria-expanded='false' aria-controls='collapseDigital'>
-                      [Show Bio]
-                  </button>
-              ">
-        Digital Affairs & Sovereignty
-      </button>
-
-      <button class="role-btn"
-              data-committee="Economic and Social Council (ECOSOC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseECOSOC' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseECOSOC' aria-expanded='false' aria-controls='collapseECOSOC'>
-                      [Show Bio]
-                  </button>
-              ">
-        Economic and Social Council (ECOSOC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="UNESCO"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseUNESCO' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseUNESCO' aria-expanded='false' aria-controls='collapseUNESCO'>
-                      [Show Bio]
-                  </button>
-              ">
-        UNESCO
-      </button>
-
-      <button class="role-btn"
-              data-committee="UN Environment Programme (UNEP)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseUNEP' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseUNEP' aria-expanded='false' aria-controls='collapseUNEP'>
-                      [Show Bio]
-                  </button>
-              ">
-        UN Environment Programme (UNEP)
-      </button>
-
-      <button class="role-btn"
-              data-committee="World Health Organisation (WHO)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseWHO' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseWHO' aria-expanded='false' aria-controls='collapseWHO'>
-                      [Show Bio]
-                  </button>
-              ">
-        World Health Organisation (WHO)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Human Rights Council (HRC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseHRC' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseHRC' aria-expanded='false' aria-controls='collapseHRC'>
-                      [Show Bio]
-                  </button>
-              ">
-        Human Rights Council (HRC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="UN Women"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseUNWomen' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseUNWomen' aria-expanded='false' aria-controls='collapseUNWomen'>
-                      [Show Bio]
-                  </button>
-              ">
-        UN Women
-      </button>
-
-      <button class="role-btn"
-              data-committee="SOCHUM"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseSOCHUM' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSOCHUM' aria-expanded='false' aria-controls='collapseSOCHUM'>
-                      [Show Bio]
-                  </button>
-              ">
-        Social, Humanitarian & Cultural Committee (SOCHUM)
-      </button>
-
-      <button class="role-btn"
-              data-committee="UN Office on Drugs and Crime (UNODC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseUNODC' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseUNODC' aria-expanded='false' aria-controls='collapseUNODC'>
-                      [Show Bio]
-                  </button>
-              ">
-        UN Office on Drugs and Crime (UNODC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Historical Crisis Committee (HCC)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseHCC' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseHCC' aria-expanded='false' aria-controls='collapseHCC'>
-                      [Show Bio]
-                  </button>
-              ">
-        Historical Crisis Committee (HCC)
-      </button>
-
-      <button class="role-btn"
-              data-committee="Special Tribunal (STIPS)"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseSTIPS' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSTIPS' aria-expanded='false' aria-controls='collapseSTIPS'>
-                      [Show Bio]
-                  </button>
-              ">
-        Special Tribunal (STIPS)
-      </button>
-
-      <button class="role-btn"
-              data-committee="NATO"
-              data-img1="default-profile.png"
-              data-img2="default-profile.png"
-              data-img3="default-profile.png"
-              data-info="
-                  <hr>
-                  <h4 style='color: var(--teal);'>Chair: To be announced</h4>
-                  <p><strong>Contact:</strong> To be announced</p>
-                  <div id='collapseNATO' class='collapse'>
-                      <p>Bio information to be announced.</p>
-                  </div>
-                  <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseNATO' aria-expanded='false' aria-controls='collapseNATO'>
-                      [Show Bio]
-                  </button>
-              ">
-        NATO
-      </button>
+      <button class="role-btn" data-committee="Security Council 1 (UNSC)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseSC1' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseSC1'>[Show Bio]</button>">Security Council 1 (UNSC)</button>
+      <button class="role-btn" data-committee="Security Council 2 (UNSC)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseSC2' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseSC2'>[Show Bio]</button>">Security Council 2 (UNSC)</button>
+      <button class="role-btn" data-committee="Committee on Digital Affairs & Sovereignty" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseDig' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseDig'>[Show Bio]</button>">Digital Affairs & Sovereignty</button>
+      <button class="role-btn" data-committee="Economic and Social Council (ECOSOC)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseECO' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseECO'>[Show Bio]</button>">Economic and Social Council (ECOSOC)</button>
+      <button class="role-btn" data-committee="UNESCO" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseUNESCO' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseUNESCO'>[Show Bio]</button>">UNESCO</button>
+      <button class="role-btn" data-committee="UN Environment Programme (UNEP)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseUNEP' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseUNEP'>[Show Bio]</button>">UN Environment Programme (UNEP)</button>
+      <button class="role-btn" data-committee="World Health Organisation (WHO)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseWHO' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseWHO'>[Show Bio]</button>">World Health Organisation (WHO)</button>
+      <button class="role-btn" data-committee="Human Rights Council (HRC)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseHRC' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseHRC'>[Show Bio]</button>">Human Rights Council (HRC)</button>
+      <button class="role-btn" data-committee="UN Women" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseWomen' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseWomen'>[Show Bio]</button>">UN Women</button>
+      <button class="role-btn" data-committee="SOCHUM" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseSOCHUM' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseSOCHUM'>[Show Bio]</button>">Social, Humanitarian & Cultural Committee (SOCHUM)</button>
+      <button class="role-btn" data-committee="UN Office on Drugs and Crime (UNODC)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseUNODC' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseUNODC'>[Show Bio]</button>">UN Office on Drugs and Crime (UNODC)</button>
+      <button class="role-btn" data-committee="Historical Crisis Committee (HCC)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseHCC' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseHCC'>[Show Bio]</button>">Historical Crisis Committee (HCC)</button>
+      <button class="role-btn" data-committee="Special Tribunal (STIPS)" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseSTIPS' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseSTIPS'>[Show Bio]</button>">Special Tribunal (STIPS)</button>
+      <button class="role-btn" data-committee="NATO" data-img1="default-profile.png" data-img2="default-profile.png" data-img3="default-profile.png" data-info="<hr><h4>Chair: To be announced</h4><div id='collapseNATO' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseNATO'>[Show Bio]</button>">NATO</button>
     </div>
 
     <div class="section">
       <h2>The Staff</h2>
-      <button class="role-btn" data-role="Head of Staff" data-info="
-            <h4 style='color: var(--teal);'>To be announced</h4>
-            <p><strong>Contact:</strong> To be announced</p>
-            <div id='collapseHeadStaff' class='collapse'>
-                <p>Bio information to be announced.</p>
-            </div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseHeadStaff' aria-expanded='false' aria-controls='collapseHeadStaff'>
-                [Show Bio]
-            </button>
-      ">Head of Staff</button>
-
-      <button class="role-btn" data-role="Committee Staff Members" data-info="
-            <h4 style='color: var(--teal);'>To be announced</h4>
-            <p><strong>Contact:</strong> To be announced</p>
-            <div id='collapseComStaff' class='collapse'>
-                <p>Bio information to be announced.</p>
-            </div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseComStaff' aria-expanded='false' aria-controls='collapseComStaff'>
-                [Show Bio]
-            </button>
-      ">Committee Staff Members</button>
+      <button class="role-btn" data-role="Head of Staff" data-info="<h4>To be announced</h4><div id='collapseHeadStaff' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseHeadStaff'>[Show Bio]</button>">Head of Staff</button>
+      <button class="role-btn" data-role="Committee Staff Members" data-info="<h4>To be announced</h4><div id='collapseComStaff' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseComStaff'>[Show Bio]</button>">Committee Staff Members</button>
     </div>
 
     <div class="section">
         <h2>The Press</h2>
-        
         <div class="row g-3 mb-3">
           <div class="col-md-6 col-lg-4">
-            <button class="role-btn small-role-btn" 
-                    data-name="Antigoni Klironomou" 
-                    data-role="Co-Ordinator" 
-                    data-img="press_klironomou.jpg" 
-                    data-info="
-                        <h4 style='color: var(--teal);'>Antigoni Klironomou</h4>
-                        <p><strong>Contact:</strong> To be announced</p>
-                        <div id='collapseAntigoni' class='collapse'>
-                            <p>I am Antigoni Klironomou, a 16 year old student, and I feel more than delighted to participate in PyleaMUN 2027! In last year's PyleaMUN I had the best time of my life as a Press team member and this year I am honored with the position of Co-ordinator of the team. I will make sure to have the best possible outcome in everything we are responsible of and my team is ready to capture every minute of this amazing conference! So, do not only prepare your speeches delegates, but your poses and smiles too!</p>
-                        </div>
-                        <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseAntigoni' aria-expanded='false' aria-controls='collapseAntigoni'>
-                            [Show Bio]
-                        </button>
-                    ">
-              Antigoni Klironomou
-              <div style="font-size: 0.9em; font-weight: normal; color: var(--gold);">Co-Ordinator</div>
-            </button>
+            <button class="role-btn small-role-btn" data-name="Antigoni Klironomou" data-role="Co-Ordinator" data-img="klironomou.jpeg" data-info="<h4 style='color: var(--teal);'>Antigoni Klironomou</h4><p><strong>Contact:</strong> To be announced</p><div id='collapseAntigoni' class='collapse'><p>I am Antigoni Klironomou, a 16 year old student, and I feel more than delighted to participate in PyleaMUN 2027! In last year's PyleaMUN I had the best time of my life as a Press team member and this year I am honored with the position of Co-ordinator of the team. I will make sure to have the best possible outcome in everything we are responsible of and my team is ready to capture every minute of this amazing conference! So, do not only prepare your speeches delegates, but your poses and smiles too!</p></div><button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseAntigoni' aria-expanded='false'>[Show Bio]</button>">Antigoni Klironomou<div style="font-size: 0.9em; font-weight: normal; color: var(--gold);">Co-Ordinator</div></button>
           </div>
         </div>
-
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-          <div class="col">
-            <button class="role-btn small-role-btn" data-name="Georgia Malea" data-role="Press Member" data-img="malea.jpg" data-info="
-                <h4 style='color: var(--teal);'>Georgia Malea</h4>
-                <p><strong>Contact:</strong> To be announced</p>
-                <div id='collapseGeorgia' class='collapse'>
-                    <p>Bio information to be announced.</p>
-                </div>
-                <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseGeorgia' aria-expanded='false' aria-controls='collapseGeorgia'>
-                    [Show Bio]
-                </button>
-            ">
-              Georgia Malea
-            </button>
-          </div>
-          <div class="col">
-            <button class="role-btn small-role-btn" data-name="Faidra Papadopoulou" data-role="Press Member" data-img="default-profile.png" data-info="
-                <h4 style='color: var(--teal);'>Faidra Papadopoulou</h4>
-                <p><strong>Contact:</strong> To be announced</p>
-                <div id='collapseFaidra' class='collapse'>
-                    <p>Bio information to be announced.</p>
-                </div>
-                <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFaidra' aria-expanded='false' aria-controls='collapseFaidra'>
-                    [Show Bio]
-                </button>
-            ">
-              Faidra Papadopoulou
-            </button>
-          </div>
-          <div class="col">
-            <button class="role-btn small-role-btn" data-name="Anastasia Poimenidou" data-role="Press Member" data-img="poimenidou.jpg" data-info="
-                <h4 style='color: var(--teal);'>Anastasia Poimenidou</h4>
-                <p><strong>Contact:</strong> To be announced</p>
-                <div id='collapseAnastasia' class='collapse'>
-                    <p>Bio information to be announced.</p>
-                </div>
-                <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseAnastasia' aria-expanded='false' aria-controls='collapseAnastasia'>
-                    [Show Bio]
-                </button>
-            ">
-              Anastasia Poimenidou
-            </button>
-          </div>
-          <div class="col">
-            <button class="role-btn small-role-btn" data-name="Sotiria Xourafa" data-role="Press Member" data-img="xourafa.jpeg" data-info="
-                <h4 style='color: var(--teal);'>Sotiria Xourafa</h4>
-                <p><strong>Contact:</strong> To be announced</p>
-                <div id='collapseSotiria' class='collapse'>
-                    <p>Bio information to be announced.</p>
-                </div>
-                <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSotiria' aria-expanded='false' aria-controls='collapseSotiria'>
-                    [Show Bio]
-                </button>
-            ">
-              Sotiria Xourafa
-            </button>
-          </div>
+          <div class="col"><button class="role-btn small-role-btn" data-name="Georgia Malea" data-role="Press Member" data-img="malea.jpg" data-info="<h4>Georgia Malea</h4><div id='collapseMalea' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseMalea'>[Show Bio]</button>">Georgia Malea</button></div>
+          <div class="col"><button class="role-btn small-role-btn" data-name="Faidra Papadopoulou" data-role="Press Member" data-img="default-profile.png" data-info="<h4>Faidra Papadopoulou</h4><div id='collapseFaidra' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseFaidra'>[Show Bio]</button>">Faidra Papadopoulou</button></div>
+          <div class="col"><button class="role-btn small-role-btn" data-name="Anastasia Poimenidou" data-role="Press Member" data-img="poimenidou.jpg" data-info="<h4>Anastasia Poimenidou</h4><div id='collapsePoimenidou' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapsePoimenidou'>[Show Bio]</button>">Anastasia Poimenidou</button></div>
+          <div class="col"><button class="role-btn small-role-btn" data-name="Sotiria Xourafa" data-role="Press Member" data-img="xourafa.jpeg" data-info="<h4>Sotiria Xourafa</h4><div id='collapseXourafa' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseXourafa'>[Show Bio]</button>">Sotiria Xourafa</button></div>
         </div>
       </div>
   </div>
