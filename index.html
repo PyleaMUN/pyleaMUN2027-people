@@ -163,6 +163,17 @@ body{background:#f1ecdf;color:#001f3f}
       .chair-photo, .chair-placeholder { width: 90px; height: 120px; }
       .chair-profile details { padding-left: 0; }
     }
+
+    /* Text-only committee staff rosters. */
+    .staff-roster { border-top: 1px solid #001f3f20; padding: 18px 0 8px; }
+    .staff-roster h4 { color: #00666b; margin: 0 0 12px; font-size: 1.15rem; }
+    .staff-roster ul { list-style: none; margin: 0; padding: 0; }
+    .staff-roster li { padding: 9px 0; border-bottom: 1px solid #001f3f0d; overflow-wrap: anywhere; }
+    .staff-roster li:last-child { border-bottom: 0; }
+    .staff-deputy { font-weight: 700; }
+    .staff-designation { color: #00666b; font-size: .9rem; font-weight: 600; }
+    .staff-pending { color: var(--muted); font-style: italic; }
+    .staff-roster .staff-note { margin: 9px 0 0; color: var(--muted); font-size: .85rem; }
   </style>
 </head>
 <body>
@@ -269,11 +280,13 @@ body{background:#f1ecdf;color:#001f3f}
     <div class="section">
       <h2>Executive Team</h2>
 
-      <button class="role-btn" data-name="Eleni Proestou" data-role="Head of Executives" data-img="proestou.jpg" data-info="
+      <button class="role-btn" data-name="Eleni Proestou" data-role="Co-Head of Executives" data-img="proestou.jpg" data-info="
             <h4 style='color: var(--teal);'>Eleni Proestou</h4>
             <p><strong>Contact:</strong> To be announced</p>
-            <div id='collapseExternal' class='collapse'><p>Hello, PyleaMUN family! I am Proestou Eleni, I’m a high school student who really enjoys working with people, taking initiative, and being part of a team. As Head of Executives, I care a lot about communication, organization, and making sure everyone feels heard and supported. I believe that good leadership is not just about making decisions but also about listening, helping others, and working together towards the same goal. I’m really excited to take on this role and do my best to make the conference a great experience for everyone..</p></div>
-            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExternal' aria-expanded='false'>[Show Bio]</button>">Head of Executives</button>
+            <div id='collapseExternal' class='collapse'><p>Hello, PyleaMUN family! I am Proestou Eleni, I’m a high school student who really enjoys working with people, taking initiative, and being part of a team. As Co-Head of Executives, I care a lot about communication, organization, and making sure everyone feels heard and supported. I believe that good leadership is not just about making decisions but also about listening, helping others, and working together towards the same goal. I’m really excited to take on this role and do my best to make the conference a great experience for everyone..</p></div>
+            <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExternal' aria-expanded='false'>[Show Bio]</button>">Co-Head of Executives</button>
+
+      <button class="role-btn" data-name="To be announced" data-role="Co-Head of Executives" data-img="" data-info="<p>Biography and contact details to be announced.</p>">Co-Head of Executives</button>
 
       <button class="role-btn" data-name="To be announced" data-role="Financial Oversight" data-info="<h4 style='color: var(--teal);'>To be announced</h4><div id='collapseFin' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFin' aria-expanded='false'>[Show Bio]</button>">Financial Oversight Team</button>
     </div>
@@ -320,17 +333,18 @@ body{background:#f1ecdf;color:#001f3f}
 </div>
 
     <div class="section">
-      <h2>Administative Staff and Security</h2>
-      <button class="role-btn" data-name="Dimitrios Bitzes" data-role="Head of Administative Staff and Security" data-img="bitzes.jpg" data-info="
+      <h2>Administrative Staff and Security</h2>
+      <button class="role-btn" data-name="Dimitrios Bitzes" data-role="Head of Administrative Staff" data-img="bitzes.jpg" data-info="
         <h4 style='color: var(--teal);'>Dimitrios Bitzes</h4>
         <p><strong>Contact:</strong> To be announced</p>
         <div id='collapseHeadAdminStaff' class='collapse'>
           <p>Hello, my name is Dimitris Bitzes and next year I will be a first year high school student. I actively participate in international organization simulation activities. I was a member of the PyleaMUN 2026 organizing team, contributing to the smooth running of the conference. I have strong collaboration skills, a sense of responsibility and a great interest in international relations. I look forward to seeing you all!</p>
         </div>
         <button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseHeadAdminStaff' aria-expanded='false'>[Show Bio]</button>
-      ">Head of Administative Staff and Security</button>
-      <button class="role-btn" data-name="Stefanos Bourlivas" data-role="Deputy Head of Administative Staff and Security" data-img="bourlivas.jpg" data-info="<h4 style='color: var(--teal);'>Stefanos Bourlivas</h4><p><strong>Contact:</strong> To be announced</p><div id='collapseDeputyAdminStaff' class='collapse'><p>My name is Stefanos, I am 16 years old and I am very thankful for being given the opportunity to be Deputy Head of Administrative Staff and Security. I am a friendly and responsible worker, I also am a really good team worker and I develop really good chemistry with other people. I do not get easily distracted and I know I will create a really positive environment for the Staff and Security Team.</p></div><button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseDeputyAdminStaff' aria-expanded='false'>[Show Bio]</button>">Deputy Head of Administative Staff and Security</button>
-      <button class="role-btn" data-role="Committee Staff Members" data-info="<h4>To be announced</h4><div id='collapseComStaff' class='collapse'><p>Bio to be announced.</p></div><button class='collapse-toggle' data-bs-toggle='collapse' data-bs-target='#collapseComStaff'>[Show Bio]</button>">Committee Staff Members</button>
+      ">Head of Administrative Staff</button>
+      <button class="role-btn" data-name="Stefanos Bourlivas" data-role="Head of Security" data-img="bourlivas.jpg" data-info="<h4 style='color: var(--teal);'>Stefanos Bourlivas</h4><p><strong>Contact:</strong> To be announced</p><div id='collapseDeputyAdminStaff' class='collapse'><p>My name is Stefanos, I am 16 years old and I am very thankful for being given the opportunity to be Head of Security. I am a friendly and responsible worker, I also am a really good team worker and I develop really good chemistry with other people. I do not get easily distracted and I know I will create a really positive environment for the Staff and Security Team.</p></div><button class='collapse-toggle' type='button' data-bs-toggle='collapse' data-bs-target='#collapseDeputyAdminStaff' aria-expanded='false'>[Show Bio]</button>">Head of Security</button>
+      <!-- Staff rosters: add names to either array in order. The first name is automatically designated Deputy. -->
+      <button class="role-btn" data-role="Committee Staff Members" data-staff="{&quot;administrative&quot;: [&quot;Maria Miggidou&quot;], &quot;security&quot;: []}">Committee Staff Members</button>
     </div>
 
     <div class="section">
@@ -421,13 +435,15 @@ body{background:#f1ecdf;color:#001f3f}
           const chairs = btn.dataset.chairs ? JSON.parse(btn.dataset.chairs) : null;
           const titleText = btn.dataset.liaison ? btn.dataset.role : btn.dataset.committee || btn.dataset.name || btn.dataset.role || btn.textContent.trim();
           const role = btn.dataset.liaison ? 'Confidential support and supplementary MUN guidance' : chairs ? chairs.map(c => c.role ? `${c.name} (${c.role})` : c.name).join(' · ') || 'Chairs to be announced' : btn.dataset.role || 'Details to be announced';
-          btn.dataset.search = (titleText + ' ' + role + ' ' + title.textContent).toLowerCase();
+          const staff = btn.dataset.staff ? JSON.parse(btn.dataset.staff) : null;
+          const staffSearch = staff ? ' Administrative Staff Security Staff Deputy Head of Administrative Staff Deputy Head of Security Staff ' + [...staff.administrative, ...staff.security].join(' ') : '';
+          btn.dataset.search = (titleText + ' ' + role + ' ' + title.textContent + staffSearch).toLowerCase();
           btn.replaceChildren();
           const add = (cls, text) => { const el = document.createElement('span'); el.className = cls; el.textContent = text; btn.appendChild(el); };
           add('card-kicker', chairs ? 'COMMITTEE / ' + String(cardIndex + 1).padStart(2, '0') : title.textContent.replace('PyleaMUN ', ''));
           add('card-title', titleText);
-          add('card-subtitle', role);
-          add('card-bottom', btn.dataset.liaison ? 'View Description' : chairs ? 'Meet the chairs' : 'View profile');
+          add('card-subtitle', staff ? 'Administrative Staff · Security Staff' : role);
+          add('card-bottom', btn.dataset.liaison ? 'View Description' : staff ? 'View staff lists' : chairs ? 'Meet the chairs' : 'View profile');
           add('card-arrow', '↗');
           grid.appendChild(btn);
         });
@@ -456,7 +472,42 @@ body{background:#f1ecdf;color:#001f3f}
           roleEl.textContent = btn.dataset.liaison ? 'Role description' : btn.dataset.role || btn.dataset.committee || '';
           infoEl.innerHTML = btn.dataset.info || '';
 
-          if (btn.dataset.chairs !== undefined) {
+          if (btn.dataset.staff !== undefined) {
+            roleEl.textContent = '';
+            const staff = JSON.parse(btn.dataset.staff);
+            const categories = [
+              { title: 'Administrative Staff', names: staff.administrative },
+              { title: 'Security Staff', names: staff.security }
+            ];
+            categories.forEach(({title, names}) => {
+              const group = document.createElement('section');
+              group.className = 'staff-roster';
+              const heading = document.createElement('h4');
+              heading.textContent = title;
+              group.appendChild(heading);
+              const list = document.createElement('ul');
+              // The first listed name is always the Deputy; no portraits are used.
+              (names.length ? names : ['To be announced']).forEach((name, index) => {
+                const item = document.createElement('li');
+                item.textContent = name;
+                if (index === 0) {
+                  item.className = 'staff-deputy';
+                  if (!names.length) item.classList.add('staff-pending');
+                  const designation = document.createElement('span');
+                  designation.className = 'staff-designation';
+                  designation.textContent = ' (Deputy Head of ' + title + ')';
+                  item.appendChild(designation);
+                }
+                list.appendChild(item);
+              });
+              group.appendChild(list);
+              const note = document.createElement('p');
+              note.className = 'staff-note';
+              note.textContent = 'Additional staff members to be announced.';
+              group.appendChild(note);
+              infoEl.appendChild(group);
+            });
+          } else if (btn.dataset.chairs !== undefined) {
             roleEl.textContent = btn.dataset.committee === 'NATO' ? 'Committee Presidency' : 'Chairs';
             const chairs = JSON.parse(btn.dataset.chairs);
             if (!chairs.length) infoEl.textContent = 'Chairs to be announced.';
